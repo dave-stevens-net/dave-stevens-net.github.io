@@ -51,9 +51,23 @@ gulp.task('lint', ['clean'], function() {
 });
 
 //**************************************************************
+//*   Copy files
+//**************************************************************
+var copyComplete = [
+    'copy_fonts'
+];
+
+gulp.task('copy_fonts', compileComplete, function() {
+    return gulp.src([
+            'src/fonts/*'
+        ])
+        .pipe(gulp.dest('./build/fonts'));
+});
+
+//**************************************************************
 //*   Run http server
 //**************************************************************
-gulp.task('connect', compileComplete, function() {
+gulp.task('connect', copyComplete, function() {
     connect.server({
         livereload: true
     });
@@ -75,5 +89,5 @@ gulp.task('watch', ['connect'], function () {
 //*   Core Gulp Commands
 //*   gulp - (default)
 //**************************************************************
-gulp.task('default', compileComplete);
+gulp.task('default', copyComplete);
 gulp.task('dev', ['connect', 'watch']);
