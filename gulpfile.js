@@ -4,6 +4,7 @@ var del = require('del');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
+var connect = require('gulp-connect');
 
 //**************************************************************
 //*   Clean out build directory
@@ -50,10 +51,29 @@ gulp.task('lint', ['clean'], function() {
 });
 
 //**************************************************************
+//*   Run http server
+//**************************************************************
+gulp.task('connect', compileComplete, function() {
+    connect.server({
+        livereload: true
+    });
+});
+
+//**************************************************************
+//*   Watch for html and sass changes. Rebuilds if changes detected
+//**************************************************************
+gulp.task('watch', ['connect'], function () {
+    gulp.watch([
+        'src/**/*.html',
+        'src/**/*.ejs',
+        'src/**/*.scss',
+        'src/**/*.js',
+    ], ['default']);
+});
+
+//**************************************************************
 //*   Core Gulp Commands
 //*   gulp - (default)
 //**************************************************************
 gulp.task('default', compileComplete);
-//    .concat(['clean']));
-//    .concat(copyComplete)
-//    .concat(['clean','server','watch']));
+gulp.task('dev', ['connect', 'watch']);
