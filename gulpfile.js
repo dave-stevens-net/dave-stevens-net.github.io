@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var ejs = require('gulp-ejs');
 var del = require('del');
 var sass = require('gulp-sass');
+var bourbonPaths = require('bourbon').includePaths;
 var minifyCSS = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
 var connect = require('gulp-connect');
@@ -37,7 +38,9 @@ gulp.task('compile_sass', ['clean'], function () {
     return gulp.src([
             './src/sass/dave-stevens.scss'
         ])
-        .pipe(sass())
+        .pipe(sass({
+            includePaths: bourbonPaths
+        }))
         .pipe(minifyCSS())
         .pipe(gulp.dest('./build/css'));
 });
@@ -54,14 +57,30 @@ gulp.task('lint', ['clean'], function() {
 //*   Copy files
 //**************************************************************
 var copyComplete = [
-    'copy_fonts'
+    'copy_js',
+    'copy_fonts',
+    'copy_css'
 ];
+
+gulp.task('copy_js', compileComplete, function() {
+    return gulp.src([
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'src/js/**/*.js'
+        ]).pipe(gulp.dest('./build/js'));
+});
 
 gulp.task('copy_fonts', compileComplete, function() {
     return gulp.src([
             'src/fonts/*'
         ])
         .pipe(gulp.dest('./build/fonts'));
+});
+
+gulp.task('copy_css', compileComplete, function() {
+    return gulp.src([
+            'node_modules/bootstrap/dist/css/bootstrap.min.css'
+        ]).pipe(gulp.dest('./build/css'));
 });
 
 //**************************************************************

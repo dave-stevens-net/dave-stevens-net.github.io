@@ -1,0 +1,11 @@
+.page-home {
+    .page-section-header {
+        min-height: 400px;
+        background-color: $color-blue;
+        color: white;
+        h1 {
+            font-weight: $font-weight-light;
+            text-align: center;
+        }
+    }
+}
