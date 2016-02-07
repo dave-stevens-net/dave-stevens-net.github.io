@@ -59,13 +59,15 @@ gulp.task('lint', ['clean'], function() {
 var copyComplete = [
     'copy_js',
     'copy_fonts',
-    'copy_css'
+    'copy_css',
+    'copy_img'
 ];
 
 gulp.task('copy_js', compileComplete, function() {
     return gulp.src([
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/jquery/dist/jquery.min.map',
+            'node_modules/materialize-css/dist/js/materialize.min.js',
             'src/js/**/*.js'
         ]).pipe(gulp.dest('./build/js'));
 });
@@ -79,8 +81,14 @@ gulp.task('copy_fonts', compileComplete, function() {
 
 gulp.task('copy_css', compileComplete, function() {
     return gulp.src([
-            'node_modules/bootstrap/dist/css/bootstrap.min.css'
+            'node_modules/materialize-css/dist/css/materialize.min.css'
         ]).pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('copy_img', compileComplete, function() {
+    return gulp.src([
+            'src/img/*'
+        ]).pipe(gulp.dest('./build/img'));
 });
 
 //**************************************************************
