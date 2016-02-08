@@ -1,17 +1,45 @@
 .page-home {
     .page-section-header {
-        min-height: 400px;
-        background-color: $color-blue;
+        min-height: 600px;
+        position: relative;
+        background-color: $color-space;
         @include retina-image("../img/mars", "cover", "png");
-        background-size: cover;
+        background-size: 2000px 800px;
         background-repeat: no-repeat;
         background-position: center bottom;
         color: white;
-        h1 {
+        h1, h2 {
             font-weight: $font-weight-light;
             text-align: center;
             text-rendering: optimizeLegibility;
-            font-size: 46px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 0px;
+            margin-top: 100px;
+        }
+        h2 {
+            font-size: 36px;
+            margin-top: 0px;
+        }
+        hr {
+            max-width: 520px;
+            border-color: $color-planet;
+            @media (max-width: 640px) {
+                max-width: 315px;
+            }
+        }
+        .ship {
+            width: 165px;
+            height: 135px;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            margin-left: -82px;
+            @include retina-image("../img/ship", "cover", "png");
+            background-size: 165px 135px;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
     }
 }
