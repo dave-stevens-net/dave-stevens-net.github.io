@@ -45,6 +45,14 @@
                     jquery: "jquery.min",
                     velocity: "velocity.min",
                     velocityui: "velocity.ui.min"
+                },
+                shim: {
+                    "velocity": {
+                        deps: [ "jquery" ]
+                    },
+                    "velocityui": {
+                        deps: [ "velocity" ]
+                    }
                 }
             });
 

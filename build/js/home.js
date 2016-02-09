@@ -1,11 +1,9 @@
-define(['jquery'],
-    function($) {
+define(['jquery', 'velocity'],
+    function($, velocity) {
         return function() {
             self = this;
 
             self.init = function() {
-                require('velocity');
-                
                 console.log('inside init...');
                 $('.ship').velocity(
                     {translateY: -200},
