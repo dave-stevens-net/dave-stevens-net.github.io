@@ -68,6 +68,9 @@ gulp.task('copy_js', compileComplete, function() {
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/jquery/dist/jquery.min.map',
             'node_modules/materialize-css/dist/js/materialize.min.js',
+            'node_modules/velocity-animate/velocity.min.js',
+            'node_modules/velocity-animate/velocity.ui.min.js',
+            'node_modules/requirejs/require.js',
             'src/js/**/*.js'
         ]).pipe(gulp.dest('./build/js'));
 });

@@ -33,5 +33,27 @@
 
     <script src="build/js/jquery.min.js"></script>
     <script src="build/js/materialize.min.js"></script>
+    <script src="build/js/velocity.min.js"></script>
+    <script src="build/js/velocity.ui.min.js"></script>
+    <script src="build/js/require.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            require.config({
+                baseUrl: "build/js",
+                paths: {
+                    jquery: "jquery.min",
+                    velocity: "velocity.min",
+                    velocityui: "velocity.ui.min"
+                }
+            });
+
+            require(['home'], function(HomeViewModel) {
+                var homeViewModel = new HomeViewModel();
+                homeViewModel.init();
+            });
+        });
+    </script>
+
 </body>
 </html>
