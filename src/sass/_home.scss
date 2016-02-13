@@ -3,11 +3,10 @@
         min-height: 600px;
         position: relative;
         background-color: $color-space;
-        @include retina-image("../img/mars", "cover", "png");
-        background-size: 1500px 600px;
         background-repeat: no-repeat;
         background-position: center bottom;
         color: white;
+        overflow: hidden;
         h1, h2 {
             font-weight: $font-weight-light;
             text-align: center;
@@ -28,6 +27,16 @@
             @media (max-width: 640px) {
                 max-width: 315px;
             }
+        }
+        .mars {
+            position: absolute;
+            bottom: 0px;
+            height: 230px;
+            width: 1500px;
+            left: 50%;
+            margin-left: -750px;
+            @include retina-image("../img/mars", "1500px 600px", "png");
+            background-position: bottom;
         }
         .ship {
             width: 123px;
