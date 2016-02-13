@@ -45,10 +45,28 @@
             bottom: 50px;
             left: 50%;
             margin-left: -61px;
-            @include retina-image("../img/ship", "cover", "png");
-            background-size: 123px 101px;
-            background-repeat: no-repeat;
-            background-position: center center;
+            .ship-img {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 123px;
+                height: 101px;
+                @include retina-image("../img/ship", "cover", "png");
+                background-size: 123px 101px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .thrust {
+                position: absolute;
+                top: 50px;
+                left: 38px;
+                width: 46px;
+                height: 64px;
+                @include retina-image("../img/thrust", "cover", "png");
+                background-size: 46px 64px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
         }
     }
 }
