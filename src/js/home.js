@@ -3,10 +3,17 @@ define(['jquery', 'velocity', 'velocityui'],
         return function() {
             self = this;
 
-            var _moveShip = function() {
+            var _resetShip = function(onComplete) {
+                $('.ship').velocity(
+                    {translateY: 0},
+                    {duration: 0, complete: onComplete }
+                );
+            };
+            
+            var _moveShip = function(onComplete) {
                 $('.ship').velocity(
                     {translateY: -600},
-                    {duration: 4000, easing: "easeInCubic"}
+                    {duration: 4000, easing: "easeInCubic", complete: onComplete }
                 );
             };
 
@@ -39,10 +46,22 @@ define(['jquery', 'velocity', 'velocityui'],
                 velocity.RunSequence(sequence);
             };
 
-            self.init = function() {
-                _moveShip();
+            var _playSpaceshipAnimation = function() {
+                $(".replay-button").removeClass('show');
+                _resetShip(function(elements) {
+                    _moveShip(function(elements) {
+                        $(".replay-button").addClass('show');
+                    });
+                });
                 _screenShake();
                 _fireThrusters();
+            };
+
+            self.init = function() {
+                _playSpaceshipAnimation();
+                $(".replay-button").click(function() {
+                    _playSpaceshipAnimation();
+                });
             };
         };
     }
