@@ -35,7 +35,7 @@
             width: 1500px;
             left: 50%;
             margin-left: -750px;
-            @include retina-image("../img/mars", "1500px 600px", "png");
+            @include retina-image("../img/mars", 1500px 600px, "png");
             background-position: bottom;
         }
         .ship {
@@ -87,5 +87,8 @@
                 background-color: rgba(200, 136, 63, 1.0);
             }
         }
+    }
+    .page-section2 {
+        min-height: 200px;
     }
 }
