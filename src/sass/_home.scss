@@ -51,10 +51,6 @@
                 left: 0px;
                 width: 123px;
                 height: 101px;
-                @include retina-image("../img/ship", "cover", "png");
-                background-size: 123px 101px;
-                background-repeat: no-repeat;
-                background-position: center center;
             }
             .thrust {
                 position: absolute;

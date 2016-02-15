@@ -8,8 +8,17 @@ define(['jquery', 'velocity', 'velocityui'],
                     {translateY: 0},
                     {duration: 0, complete: onComplete }
                 );
+                var animateCloseWing = document.getElementById("animation-open-wings");
+                animateCloseWing.beginElement();
             };
-            
+
+            var _closeWings = function() {
+                setTimeout(function(){
+                    var animateCloseWing = document.getElementById("animation-close-wings");
+                    animateCloseWing.beginElement();
+                }, 1000);
+            };
+
             var _moveShip = function(onComplete) {
                 $('.ship').velocity(
                     {translateY: -600},
@@ -49,6 +58,7 @@ define(['jquery', 'velocity', 'velocityui'],
             var _playSpaceshipAnimation = function() {
                 $(".replay-button").removeClass('show');
                 _resetShip(function(elements) {
+                    _closeWings();
                     _moveShip(function(elements) {
                         $(".replay-button").addClass('show');
                     });
