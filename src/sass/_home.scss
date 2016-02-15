@@ -70,11 +70,12 @@
             bottom: 70px;
             left: 50%;
             margin-left: -30px;
-            height: 60px;
-            width: 60px;
+            height: 58px;
+            width: 58px;
             background-color: rgba(200, 136, 63, 0.0);
             border-radius: 3px;
             transition: all 0.5s ease;
+            text-align: center;
             &.show {
                 opacity: 1;
                 cursor: pointer;
