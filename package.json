@@ -17,7 +17,8 @@
         "jshint-stylish": "^2.1.0",
         "gulp-connect": "^2.3.1",
         "velocity-animate": "^1.2.3",
-        "requirejs": "^2.1.22"
+        "requirejs": "^2.1.22",
+        "snapsvg": "^0.4.0"
     },
     "devDependencies": {
     },

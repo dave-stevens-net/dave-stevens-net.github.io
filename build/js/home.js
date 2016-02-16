@@ -1,22 +1,27 @@
-define(['jquery', 'velocity', 'velocityui'],
-    function($, velocity, velocityui) {
+define(['jquery', 'velocity', 'velocityui', 'snapsvg'],
+    function($, velocity, velocityui, Snap) {
         return function() {
-            self = this;
+            var self = this;
+            var _svg = Snap("#ship-svg");
 
             var _resetShip = function(onComplete) {
                 $('.ship').velocity(
                     {translateY: 0},
                     {duration: 0, complete: onComplete }
                 );
-                var animateCloseWing = document.getElementById("animation-open-wings");
-                animateCloseWing.beginElement();
+                _resetWings();
+            };
+
+            var _resetWings = function() {
+                var shipPath = _svg.select(":nth-child(1)");
+                shipPath.animate({d: "M1.461,74.586l0,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l0,33.75l-16.875,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-16.875,33.75Z"}, 0);
             };
 
             var _closeWings = function() {
                 setTimeout(function(){
-                    var animateCloseWing = document.getElementById("animation-close-wings");
-                    animateCloseWing.beginElement();
-                }, 1000);
+                    var shipPath = _svg.select(":nth-child(1)");
+                    shipPath.animate({d: "M17.961,74.586l-16.5,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l-16.5,33.75l-0.375,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-0.375,33.75Z"}, 1000, mina.easeinout);
+                }, 800);
             };
 
             var _moveShip = function(onComplete) {

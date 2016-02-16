@@ -31,15 +31,8 @@
                 <div class="ship">
                     <div class="thrust"></div>
                     <div class="ship-img">
-                        <svg width="100%" height="100%" viewBox="0 0 93 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.41421;">
-                            <path d="M1.461,74.586l0,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l0,33.75l-16.875,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-16.875,33.75Z" style="fill:#8a7f6e;stroke-width:1.69px;stroke:#e9e1d5;">
-                                <animate id="animation-close-wings" begin="indefinite" attributeName="d" dur="1000ms" fill="freeze"
-                                    from="M1.461,74.586l0,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l0,33.75l-16.875,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-16.875,33.75Z"
-                                    to="M17.961,74.586l-16.5,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l-16.5,33.75l-0.375,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-0.375,33.75Z"/>
-                                <animate id="animation-open-wings" begin="indefinite" attributeName="d" dur="10ms" fill="freeze"
-                                    from="M17.961,74.586l-16.5,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l-16.5,33.75l-0.375,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-0.375,33.75Z"
-                                    to="M1.461,74.586l0,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l0,33.75l-16.875,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-16.875,33.75Z"/>
-                            </path>
+                        <svg id="ship-svg" width="100%" height="100%" viewBox="0 0 93 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.41421;">
+                            <path d="M1.461,74.586l0,-33.75l11.25,-22.5l33.75,-16.875l33.75,16.875l11.25,22.5l0,33.75l-16.875,-33.75l-5.625,0l-5.625,11.25c0,0 -5.661,3.264 -16.875,3.264c-11.493,0 -16.875,-3.264 -16.875,-3.264l-5.625,-11.25l-5.625,0l-16.875,33.75Z" style="fill:#8a7f6e;stroke-width:1.69px;stroke:#e9e1d5;"></path>
                             <path d="M23.961,18.336l45,0c0,0 -5.496,-5.627 -22.5,-5.625c-17.003,0.003 -22.5,5.625 -22.5,5.625Z" style="fill:#e8e1d5;"/>
                         </svg>
                     </div>
@@ -63,6 +56,7 @@
     <script src="build/js/materialize.min.js"></script>
     <script src="build/js/velocity.min.js"></script>
     <script src="build/js/velocity.ui.min.js"></script>
+    <script src="build/js/snap.svg-min.js"></script>
     <script src="build/js/require.js"></script>
 
     <script>
@@ -72,7 +66,8 @@
                 paths: {
                     jquery: "jquery.min",
                     velocity: "velocity.min",
-                    velocityui: "velocity.ui.min"
+                    velocityui: "velocity.ui.min",
+                    snapsvg: "snap.svg-min"
                 },
                 shim: {
                     "velocity": {
