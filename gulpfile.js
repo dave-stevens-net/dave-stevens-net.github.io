@@ -72,6 +72,7 @@ gulp.task('copy_js', compileComplete, function() {
             'node_modules/velocity-animate/velocity.ui.min.js',
             'node_modules/requirejs/require.js',
             'node_modules/snapsvg/dist/snap.svg-min.js',
+            'node_modules/q/q.js',
             'src/js/**/*.js'
         ]).pipe(gulp.dest('./build/js'));
 });

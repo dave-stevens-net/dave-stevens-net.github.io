@@ -24,6 +24,7 @@
         hr {
             max-width: 520px;
             border-color: $color-planet;
+            border-style: solid;
             @media (max-width: 640px) {
                 max-width: 315px;
             }
@@ -31,31 +32,31 @@
         .mars {
             position: absolute;
             bottom: 0px;
-            height: 230px;
+            height: 260px;
             width: 1500px;
             left: 50%;
             margin-left: -750px;
-            @include retina-image("../img/mars", 1500px 600px, "png");
+            @include retina-image("../img/blue_planet", 1500px 600px, "png");
             background-position: bottom;
         }
         .ship {
-            width: 123px;
-            height: 101px;
+            width: 142px;
+            height: 120px;
             position: absolute;
             bottom: 50px;
             left: 50%;
-            margin-left: -61px;
+            margin-left: -71px;
             .ship-img {
                 position: absolute;
                 top: 0px;
                 left: 0px;
-                width: 123px;
-                height: 101px;
+                width: 142px;
+                height: 120px;
             }
             .thrust {
                 position: absolute;
-                top: 50px;
-                left: 38px;
+                top: 60px;
+                left: 48px;
                 width: 46px;
                 height: 64px;
                 @include retina-image("../img/thrust", "cover", "png");
@@ -63,6 +64,11 @@
                 background-repeat: no-repeat;
                 background-position: center center;
             }
+        }
+        #astronaut {
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
         }
         .replay-button {
             opacity: 0;
@@ -72,7 +78,7 @@
             margin-left: -30px;
             height: 58px;
             width: 58px;
-            background-color: rgba(200, 136, 63, 0.0);
+            background-color: rgba(25, 73, 125, 0.0);
             border-radius: 3px;
             transition: all 0.5s ease;
             text-align: center;
@@ -81,7 +87,7 @@
                 cursor: pointer;
             }
             &:hover {
-                background-color: rgba(200, 136, 63, 1.0);
+                background-color: rgba(25, 73, 125, 1.0);
             }
         }
     }
