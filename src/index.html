@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="mars">
-                <svg id="astronaut"></svg>
                 <div class="ship">
+                    <div id="astronaut" style="background-image:url(/build/img/astro_10cols_5pct.png)"></div>
                     <div class="thrust"></div>
                     <div class="ship-img">
                         <img src="build/img/ship.png">
@@ -56,6 +56,7 @@
     <script src="build/js/velocity.ui.min.js"></script>
     <script src="build/js/snap.svg-min.js"></script>
     <script src="build/js/q.js"></script>
+    <script src="build/js/jquery.sprite-animator.min.js"></script>
     <script src="build/js/require.js"></script>
 
     <script>
@@ -67,6 +68,7 @@
                     velocity: "velocity.min",
                     velocityui: "velocity.ui.min",
                     snapsvg: "snap.svg-min",
+                    spriteanimator: "jquery.sprite-animator.min",
                     q: "q"
                 },
                 shim: {
@@ -75,6 +77,9 @@
                     },
                     "velocityui": {
                         deps: [ "velocity" ]
+                    },
+                    "spriteanimator": {
+                        deps: [ "jquery" ]
                     }
                 }
             });
