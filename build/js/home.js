@@ -8,28 +8,21 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
             var _astronautClimbing = null;
 
             var _resetScene = function(onComplete) {
-                _resetShip(function() {
-                    _closeWings();
-                    _resetAstronaut(function() {
-                        onComplete();
-                    });
-                });
+                _resetShip();
+                _closeWings();
+                _resetAstronaut();
             };
 
-            var _resetAstronaut = function(onComplete) {
-                $('#astronaut_running').velocity(
-                    {translateY: 0, translateX: 0},
-                    {duration: 0, complete: onComplete }
-                );
+            var _resetAstronaut = function() {
+                $.Velocity.hook($('#astronaut_running'), "translateY", "0px");
+                $.Velocity.hook($('#astronaut_running'), "translateX", "0px");
                 $('#astronaut_running').show();
                 $('#astronaut_standing').hide();
             };
 
-            var _resetShip = function(onComplete) {
-                $('.ship').velocity(
-                    {translateY: 0},
-                    {duration: 0, complete: onComplete }
-                );
+            var _resetShip = function() {
+                $.Velocity.hook($('.ship'), "translateY", "0px");
+                $.Velocity.hook($('#ladder'), "translateY", "0px");
                 $('.thrust').hide();
                 _resetWings();
             };
@@ -95,7 +88,7 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
 
             var _playAstronautRunning = function(onComplete) {
                 $('#astronaut_running').velocity(
-                    {translateX: 165, translateY: 25},
+                    {translateX: 170, translateY: 25},
                     {duration: 3000, easing: "linear", complete: onComplete }
                 );
                 _astronautRunning.play({
@@ -105,9 +98,10 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
             };
 
             var _playAstronautStanding = function(onComplete) {
-                $.Velocity.hook($('#astronaut_standing'), "translateX", "165px");
+                $.Velocity.hook($('#astronaut_standing'), "translateX", "170px");
                 $.Velocity.hook($('#astronaut_standing'), "translateY", "25px");
                 $('#astronaut_standing').show();
+                _astronautRunning.stop();
                 $('#astronaut_running').hide();
                 _astronautStanding.play({
                     run: -1,
@@ -115,7 +109,42 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
                 });
                 setTimeout(function() {
                     onComplete();
-                }, 3000);
+                }, 1500);
+            };
+
+            var _playAstronautClimbing = function(onComplete) {
+                $.Velocity.hook($('#astronaut_climbing'), "translateX", "175px");
+                $.Velocity.hook($('#astronaut_climbing'), "translateY", "25px");
+                $('#astronaut_climbing').show();
+                _astronautStanding.stop();
+                $('#astronaut_standing').hide();
+                _astronautClimbing.play({
+                    run: -1,
+                    delay: 20
+                });
+                $('#astronaut_climbing').velocity(
+                    {translateY: -20},
+                    {duration: 2000, easing: "linear", complete: onComplete }
+                );
+            };
+
+            var _playLadderDescending = function() {
+                $('#ladder').show();
+                $('#ladder').velocity(
+                    {translateY: 30},
+                    {duration: 1000, easing: "easeOutCubic"}
+                );
+            };
+
+            var _playLadderAscending = function(onComplete) {
+                $('#ladder').velocity(
+                    {translateY: 0},
+                    {duration: 1000, easing: "easeOutCubic", complete: function() {
+                            $('#ladder').hide();
+                            onComplete();
+                        }
+                    }
+                );
             };
 
             var _initArtifacts = function() {
@@ -141,12 +170,17 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
             };
 
             var _playAnimation = function() {
-                _resetScene(function() {
-                    _playAstronautRunning(function() {
-                        _playAstronautStanding(function() {
-                            _astronautRunning.stop();
-                            $('#astronaut_running').hide();
-                            _playSpaceshipAnimation();
+                _resetScene();
+                _playAstronautRunning(function() {
+                    _playLadderDescending();
+                    _playAstronautStanding(function() {
+                        $('#astronaut_running').hide();
+                        _playAstronautClimbing(function() {
+                            _playLadderAscending(function() {
+                                setTimeout(function() {
+                                    _playSpaceshipAnimation();
+                                }, 1000);
+                            });
                         });
                     });
                 });

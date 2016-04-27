@@ -51,6 +51,7 @@
                 top: 0px;
                 left: 0px;
                 background-image: url("../img/ship_blue_sprite.png");
+                z-index: 2;
             }
             .thrust {
                 position: absolute;
@@ -62,10 +63,24 @@
                 background-size: 46px 64px;
                 background-repeat: no-repeat;
                 background-position: center center;
+                display: none;
+            }
+            #ladder {
+                position: absolute;
+                top: 33px;
+                left: 62px;
+                width: 18px;
+                height: 51px;
+                background-image: url("../img/ladder.png");
+                background-size: 18px 51px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                display: none;
             }
         }
         .astronaut {
             position: absolute;
+            z-index: 1;
         }
         #astronaut_running {
             @extend .astronaut;
