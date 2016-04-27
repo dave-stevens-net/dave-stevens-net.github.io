@@ -40,18 +40,17 @@
             background-position: bottom;
         }
         .ship {
-            width: 142px;
+            width: 144px;
             height: 120px;
             position: absolute;
             bottom: 50px;
             left: 50%;
-            margin-left: -71px;
-            .ship-img {
+            margin-left: -72px;
+            #ship_anim {
                 position: absolute;
                 top: 0px;
                 left: 0px;
-                width: 142px;
-                height: 120px;
+                background-image: url("../img/ship_blue_sprite.png");
             }
             .thrust {
                 position: absolute;
@@ -65,10 +64,28 @@
                 background-position: center center;
             }
         }
-        #astronaut {
+        .astronaut {
             position: absolute;
+        }
+        #astronaut_running {
+            @extend .astronaut;
             top: 50px;
             left: -115px;
+            background-image: url("../img/astro_running_10cols.png");
+        }
+        #astronaut_standing {
+            @extend .astronaut;
+            top: 50px;
+            left: -115px;
+            display: none;
+            background-image: url("../img/astro_standing_10cols.png");
+        }
+        #astronaut_climbing {
+            @extend .astronaut;
+            top: 50px;
+            left: -115px;
+            display: none;
+            background-image: url("../img/astro_climbing_10cols.png");
         }
         .replay-button {
             opacity: 0;

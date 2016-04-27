@@ -2,7 +2,10 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
     function($, velocity, velocityui, spriteanimator, Q) {
         return function() {
             var self = this;
-            var _astronautAnimation = null;
+            var _ship = null;
+            var _astronautRunning = null;
+            var _astronautStanding = null;
+            var _astronautClimbing = null;
 
             var _resetScene = function(onComplete) {
                 _resetShip(function() {
@@ -14,11 +17,12 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
             };
 
             var _resetAstronaut = function(onComplete) {
-                $('#astronaut').velocity(
+                $('#astronaut_running').velocity(
                     {translateY: 0, translateX: 0},
                     {duration: 0, complete: onComplete }
                 );
-                $('#astronaut').show();
+                $('#astronaut_running').show();
+                $('#astronaut_standing').hide();
             };
 
             var _resetShip = function(onComplete) {
@@ -35,6 +39,7 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
             };
 
             var _closeWings = function() {
+                _ship.reset();
             };
 
             var _moveShip = function(onComplete) {
@@ -80,35 +85,75 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
                 });
                 _screenShake();
                 _fireThrusters();
+                setTimeout(function() {
+                    _ship.play({
+                        run: 1,
+                        delay: 40
+                    });
+                }, 1500);
             };
 
-            var _playAstronautAnimation = function(onComplete) {
-                _astronautAnimation = $('#astronaut').spriteAnimator({
-                    cols: 10,
-                    rows: 3,
-                    cutOffFrames: 5
-                });
-                $('#astronaut').velocity(
+            var _playAstronautRunning = function(onComplete) {
+                $('#astronaut_running').velocity(
                     {translateX: 165, translateY: 25},
                     {duration: 3000, easing: "linear", complete: onComplete }
                 );
-                _astronautAnimation.play({
+                _astronautRunning.play({
                     run: -1,
                     delay: 20
                 });
             };
 
+            var _playAstronautStanding = function(onComplete) {
+                $.Velocity.hook($('#astronaut_standing'), "translateX", "165px");
+                $.Velocity.hook($('#astronaut_standing'), "translateY", "25px");
+                $('#astronaut_standing').show();
+                $('#astronaut_running').hide();
+                _astronautStanding.play({
+                    run: -1,
+                    delay: 20
+                });
+                setTimeout(function() {
+                    onComplete();
+                }, 3000);
+            };
+
+            var _initArtifacts = function() {
+                _astronautRunning = $('#astronaut_running').spriteAnimator({
+                    cols: 10,
+                    rows: 3,
+                    cutOffFrames: 5
+                });
+                _astronautStanding = $('#astronaut_standing').spriteAnimator({
+                    cols: 10,
+                    rows: 3,
+                    cutOffFrames: 5
+                });
+                _astronautClimbing = $('#astronaut_climbing').spriteAnimator({
+                    cols: 10,
+                    rows: 3,
+                    cutOffFrames: 5
+                });
+                _ship = $('#ship_anim').spriteAnimator({
+                    cols: 5,
+                    rows: 1
+                });
+            };
+
             var _playAnimation = function() {
                 _resetScene(function() {
-                    _playAstronautAnimation(function() {
-                        _astronautAnimation.stop();
-                        $('#astronaut').hide();
-                        _playSpaceshipAnimation();
+                    _playAstronautRunning(function() {
+                        _playAstronautStanding(function() {
+                            _astronautRunning.stop();
+                            $('#astronaut_running').hide();
+                            _playSpaceshipAnimation();
+                        });
                     });
                 });
             };
 
             self.init = function() {
+                _initArtifacts();
                 _playAnimation();
                 $(".replay-button").click(function() {
                     _playAnimation();
