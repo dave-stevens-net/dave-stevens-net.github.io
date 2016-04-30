@@ -192,6 +192,18 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
                 $(".replay-button").click(function() {
                     _playAnimation();
                 });
+                $(".btn-menu-open").click(function() {
+                    $(this).hide();
+                    $(".btn-menu-close").show();
+                    $(".page-overlay").addClass("active");
+                    $(".slider-menu").addClass("active");
+                });
+                $(".btn-menu-close").click(function() {
+                    $(this).hide();
+                    $(".btn-menu-open").show();
+                    $(".page-overlay").removeClass("active");
+                    $(".slider-menu").removeClass("active");
+                });
             };
         };
     }
