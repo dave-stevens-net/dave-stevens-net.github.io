@@ -67,11 +67,12 @@ gulp.task('copy_js', compileComplete, function() {
     return gulp.src([
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/jquery/dist/jquery.min.map',
-            'node_modules/materialize-css/dist/js/materialize.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/bootstrap-material-design/dist/js/material.min.js',
+            'node_modules/bootstrap-material-design/dist/js/ripples.min.js',
             'node_modules/velocity-animate/velocity.min.js',
             'node_modules/velocity-animate/velocity.ui.min.js',
             'node_modules/requirejs/require.js',
-            'node_modules/snapsvg/dist/snap.svg-min.js',
             'node_modules/jquery-spriteanimator/dist/jquery.sprite-animator.min.js',
             'node_modules/q/q.js',
             'src/js/**/*.js'
@@ -87,7 +88,12 @@ gulp.task('copy_fonts', compileComplete, function() {
 
 gulp.task('copy_css', compileComplete, function() {
     return gulp.src([
-            'node_modules/materialize-css/dist/css/materialize.min.css'
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'node_modules/bootstrap/dist/css/bootstrap.min.css.map',
+        'node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
+        'node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css.map',
+        'node_modules/bootstrap-material-design/dist/css/ripples.min.css',
+        'node_modules/bootstrap-material-design/dist/css/ripples.min.css.map'
         ]).pipe(gulp.dest('./build/css'));
 });
 

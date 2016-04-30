@@ -1,5 +1,5 @@
-define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q'],
-    function($, velocity, velocityui, spriteanimator, Q) {
+define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
+    function($, velocity, velocityui, spriteanimator, Q, bootstrap) {
         return function() {
             var self = this;
             var _ship = null;
