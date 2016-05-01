@@ -6,7 +6,7 @@
         z-index: 50;
         height: 100%;
         width: 300px;
-        background-color: white;
+        background-color: $color-side-menu;
         .btn-menu-close, .btn-menu-open {
             position: absolute;
             top: 10px;
@@ -24,6 +24,29 @@
             position: fixed;
             left: 0px;
             transition: left 0.5s ease-in-out;
+        }
+        .menu-nav:link, .menu-nav:visited {
+            display: block;
+            font-size: 20px;
+            padding: 12px 0px 12px 20px;
+            position: relative;
+            border-bottom: 1px solid darken($color-side-menu, 4%);
+            color: white;
+            font-family: $font-sans;
+            font-weight: $font-weight-light;
+            text-rendering: optimizeLegibility;
+            &.active {
+                background-color: $color-side-menu-active;
+            }
+            .menu-icon {
+                vertical-align: text-bottom;
+                margin-right: 10px;
+                i { font-size: 26px; }
+            }
+        }
+        .menu-nav:hover, .menu-nav:active {
+            text-decoration: none;
+            background-color: $color-side-menu-active;
         }
     }
     .page-overlay {
@@ -74,6 +97,16 @@
             @media (max-width: 640px) {
                 max-width: 315px;
             }
+        }
+        .star-field {
+            position: fixed;
+            top: 0px;
+            left: 50%;
+            height: 600px;
+            width: 1600px;
+            margin-left: -800px;
+            background-image: url("../img/star_field.png");
+            background-size: cover;
         }
         .mars {
             position: absolute;
@@ -173,7 +206,21 @@
             }
         }
     }
-    .page-section2 {
+    .page-section-about-me {
+        background-color: #eee;
         min-height: 200px;
+        padding-top: 50px;
+        h2 { margin: 0px 0 20px; }
+        h3 { margin: 5px 0 15px; }
+        position: relative;
+        z-index: 1;
+    }
+    .page-section-projects {
+        background-color: #eee;
+        min-height: 200px;
+        padding-top: 40px;
+        h2 { margin-top: 0px; }
+        position: relative;
+        z-index: 1;
     }
 }

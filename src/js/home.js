@@ -147,6 +147,17 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
                 );
             };
 
+            var _playStarField = function() {
+                $('.star-field').velocity(
+                    { rotateZ: "360deg"},
+                    { duration: 200000, easing: "linear", complete: function () {
+                            $.Velocity.hook($('.star-field'), "rotateZ", "0deg");
+                            _playStarField();
+                        }
+                    }
+                );
+            };
+
             var _initArtifacts = function() {
                 _astronautRunning = $('#astronaut_running').spriteAnimator({
                     cols: 10,
@@ -188,6 +199,7 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
 
             self.init = function() {
                 _initArtifacts();
+//                _playStarField();
                 _playAnimation();
                 $(".replay-button").click(function() {
                     _playAnimation();
