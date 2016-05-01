@@ -29,6 +29,9 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
 
             var _resetWings = function() {
                 $(".replay-button").removeClass('show');
+                setTimeout(function () {
+                    $(".replay-button").hide();
+                }, 1000);
             };
 
             var _closeWings = function() {
@@ -74,6 +77,7 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
 
             var _playSpaceshipAnimation = function() {
                 _moveShip(function(elements) {
+                    $(".replay-button").show();
                     $(".replay-button").addClass('show');
                 });
                 _screenShake();
