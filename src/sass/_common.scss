@@ -1,10 +1,16 @@
 body {
     font-size: 16px;
+    color: $default-font-color;
     h1, h2 {
         font-family: $font-sans;
         font-weight: $font-weight-light;
         text-transform: uppercase;
         text-rendering: optimizeLegibility;
     }
-
+    .btn.btn-raised.btn-primary {
+        background-color: $color-green-dark;
+    }
+    .btn.btn-raised:not(.btn-link):hover.btn-primary {
+        background-color: $color-green-light;
+    }
 }

@@ -9,8 +9,8 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
 
             var _resetScene = function(onComplete) {
                 _resetShip();
-                _closeWings();
                 _resetAstronaut();
+                _resetReplayButton();
             };
 
             var _resetAstronaut = function() {
@@ -24,18 +24,12 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator', 'q', 'bootstrap'],
                 $.Velocity.hook($('.ship'), "translateY", "0px");
                 $.Velocity.hook($('#ladder'), "translateY", "0px");
                 $('.thrust').hide();
-                _resetWings();
-            };
-
-            var _resetWings = function() {
-                $(".replay-button").removeClass('show');
-                setTimeout(function () {
-                    $(".replay-button").hide();
-                }, 1000);
-            };
-
-            var _closeWings = function() {
                 _ship.reset();
+            };
+
+            var _resetReplayButton = function() {
+                $(".replay-button").hide();
+                $(".replay-button").removeClass('show');
             };
 
             var _moveShip = function(onComplete) {

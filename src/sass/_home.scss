@@ -106,7 +106,7 @@
             width: 1600px;
             margin-left: -800px;
             background-image: url("../img/star_field.png");
-            background-size: cover;
+            background-position: center;
         }
         .mars {
             position: absolute;
@@ -207,20 +207,57 @@
         }
     }
     .page-section-about-me {
-        background-color: #eee;
+        position: relative;
+        z-index: 1;
+        background-color: $color-blue-grey-light;
         min-height: 200px;
         padding-top: 50px;
-        h2 { margin: 0px 0 20px; }
+        padding-bottom: 30px;
+        h2 { margin: 0px 0 20px; color: $color-green-dark; }
         h3 { margin: 5px 0 15px; }
-        position: relative;
-        z-index: 1;
     }
     .page-section-projects {
-        background-color: #eee;
-        min-height: 200px;
-        padding-top: 40px;
-        h2 { margin-top: 0px; }
         position: relative;
         z-index: 1;
+        background-color: $color-blue-grey-medium;
+        min-height: 200px;
+        padding-top: 40px;
+        h2 { margin-top: 0px; color: $color-green-dark; }
+        h3 {
+            font-size: 50px;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 0px;
+        }
+        .col1 {
+            .time-frame {
+                text-align: center;
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+            .roles {
+                text-align: center;
+                margin: 20px 0 30px;
+                span {
+                    min-width: 100px;
+                    border-top: 1px solid lighten($default-font-color, 20%);
+                    border-bottom: 1px solid lighten($default-font-color, 20%);
+                    padding: 10px 0 10px;
+                    text-align: center;
+                }
+            }
+            .devices-used {
+                .lrg { font-size: 30px; vertical-align: -3px; }
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .view-live {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+        }
+        .col2 {
+            background-color: $color-blue-grey-dark;
+        }
     }
 }
