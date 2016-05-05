@@ -7,10 +7,4 @@ body {
         text-transform: uppercase;
         text-rendering: optimizeLegibility;
     }
-    .btn.btn-raised.btn-primary {
-        background-color: $color-green-dark;
-    }
-    .btn.btn-raised:not(.btn-link):hover.btn-primary {
-        background-color: $color-green-light;
-    }
 }

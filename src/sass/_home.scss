@@ -1,4 +1,32 @@
 .page-home {
+
+    .menu-open-close {
+        position: absolute;
+        top: 20px; left: 20px;
+        height: 20px;
+        width: 25px;
+        z-index: 60;
+        .line {
+            position: absolute;
+            left: 0px;
+            width: 25px;
+            height: 2px;
+            background-color: white;
+        }
+        .line1 {
+            @extend .line;
+            top: 0px;
+        }
+        .line2 {
+            @extend .line;
+            top: 9px;
+        }
+        .line3 {
+            @extend .line;
+            top: 18px;
+        }
+    }
+
     .slider-menu {
         position: absolute;
         top: 0px;
@@ -7,19 +35,8 @@
         height: 100%;
         width: 300px;
         background-color: $color-side-menu;
-        .btn-menu-close, .btn-menu-open {
-            position: absolute;
-            top: 10px;
-            right: -66px;
-            background-color: transparent;
-            i {
-                color: white;
-            }
-        }
-        .btn-menu-close {
-            display: none;
-        }
         transition: left 0.5s ease-in-out;
+        padding-top: 60px;
         &.active {
             position: fixed;
             left: 0px;
@@ -30,14 +47,10 @@
             font-size: 20px;
             padding: 12px 0px 12px 20px;
             position: relative;
-            border-bottom: 1px solid darken($color-side-menu, 4%);
-            color: white;
+            color: $color-side-menu-text;
             font-family: $font-sans;
             font-weight: $font-weight-light;
             text-rendering: optimizeLegibility;
-            &.active {
-                background-color: $color-side-menu-active;
-            }
             .menu-icon {
                 vertical-align: text-bottom;
                 margin-right: 10px;
@@ -47,6 +60,7 @@
         .menu-nav:hover, .menu-nav:active {
             text-decoration: none;
             background-color: $color-side-menu-active;
+            color: white;
         }
     }
     .page-overlay {
@@ -219,15 +233,17 @@
     .page-section-projects {
         position: relative;
         z-index: 1;
-        background-color: $color-blue-grey-medium;
+        background-color: $color-green-dark;
         min-height: 200px;
         padding-top: 40px;
-        h2 { margin-top: 0px; color: $color-green-dark; }
+        color: lighten($color-green-light, 30%);
+        h2 { margin-top: 0px; color: white; }
         h3 {
             font-size: 50px;
             text-align: center;
             margin-top: 40px;
             margin-bottom: 0px;
+            color: white;
         }
         .col1 {
             .time-frame {
@@ -240,8 +256,8 @@
                 margin: 20px 0 30px;
                 span {
                     min-width: 100px;
-                    border-top: 1px solid lighten($default-font-color, 20%);
-                    border-bottom: 1px solid lighten($default-font-color, 20%);
+                    border-top: 1px solid $color-green-light;
+                    border-bottom: 1px solid $color-green-light;
                     padding: 10px 0 10px;
                     text-align: center;
                 }
@@ -254,6 +270,12 @@
             .view-live {
                 text-align: center;
                 margin-bottom: 50px;
+            }
+            .btn.btn-raised.btn-primary {
+                background-color: $color-green-light;
+            }
+            .btn.btn-raised:not(.btn-link):hover.btn-primary {
+                background-color: lighten($color-green-light, 5%);
             }
         }
         .col2 {
