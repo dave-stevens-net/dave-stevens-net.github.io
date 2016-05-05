@@ -6,13 +6,59 @@ define(['jquery', 'spaceshipSceneAnimator'],
             var _setupSidebarNavigation = function() {
                 $(".menu-open-close").click(function() {
                     if ($(".page-overlay").hasClass("active")) {
+                        _morphToHamburger();
                         $(".page-overlay").removeClass("active");
                         $(".slider-menu").removeClass("active");
                     } else {
+                        _morphToX();
                         $(".page-overlay").addClass("active");
                         $(".slider-menu").addClass("active");
                     }
                 });
+            };
+
+            var _morphToX = function() {
+                $('.menu-open-close .line1').velocity(
+                    {translateY: 9},
+                    {duration: 250, easing: "easeInOutCubic", complete: function() {
+                        $('.menu-open-close .line2').hide();
+                        $('.menu-open-close .line1').velocity(
+                            {rotateZ: "45deg"},
+                            {duration: 250, easing: "easeInOutCubic"}
+                        );
+                    }}
+                );
+                $('.menu-open-close .line3').velocity(
+                    {translateY: -9},
+                    {duration: 250, easing: "easeInOutCubic", complete: function() {
+                        $('.menu-open-close .line3').velocity(
+                            {rotateZ: "-45deg"},
+                            {duration: 250, easing: "easeInOutCubic"}
+                        );
+                    }}
+                );
+            };
+
+            var _morphToHamburger = function() {
+                $('.menu-open-close .line1').velocity(
+                    {rotateZ: "0deg"},
+                    {duration: 250, easing: "easeInOutCubic", complete: function() {
+                        $('.menu-open-close .line2').show();
+                        $('.menu-open-close .line1').velocity(
+                            {translateY: 0},
+                            {duration: 250, easing: "easeInOutCubic"}
+                        );
+                    }}
+                );
+                $('.menu-open-close .line3').velocity(
+                    {rotateZ: "0deg"},
+                    {duration: 250, easing: "easeInOutCubic", complete: function() {
+                        $('.menu-open-close .line3').velocity(
+                            {translateY: 0},
+                            {duration: 250, easing: "easeInOutCubic"}
+                        );
+                    }}
+                );
             };
 
             self.init = function() {
