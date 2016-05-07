@@ -15,6 +15,15 @@ define(['jquery', 'spaceshipSceneAnimator'],
                         $(".slider-menu").addClass("active");
                     }
                 });
+                var nav = function(scrollTo) {
+                    $('html, body').animate({
+                        scrollTop: scrollTo
+                    }, 500);
+                    $(".menu-open-close").click();
+                    return false;
+                };
+                $(".nav-top").click(function() { return nav(0); });
+                $(".nav-about-me").click(function() { return nav($("a[name=about-me-section]").offset().top); });
             };
 
             var _morphToX = function() {
@@ -66,54 +75,6 @@ define(['jquery', 'spaceshipSceneAnimator'],
                 spaceshipSceneAnimator.init();
                 spaceshipSceneAnimator.playAnimation();
                 _setupSidebarNavigation();
-
-//                _initArtifacts();
-//                _playStarField();
-//                _playAnimation();
-
-/*
-
-                    var _scrollTo = function(navElement, sectionId, offset) {
-                        $('html, body').animate({
-                            scrollTop: $(sectionId).offset().top - offset
-                        }, 500);
-                        $('.nav-link').removeClass('active');
-                        $(navElement).addClass('active');
-                    };
-
-                    $(document).ready(function() {
-
-                        $('.nav-worship').click(function() {
-                            _scrollTo(this, "a[name=worship-heading]", 0);
-                            return false;
-                        });
-                        $('.nav-location').click(function() {
-                            _scrollTo(this, "a[name=location-heading]", 0);
-                            return false;
-                        });
-                        $('.nav-contact').click(function() {
-                            _scrollTo(this, "a[name=contact-heading]", 0);
-                            return false;
-                        });
-                        $('.nav-mobile-worship').click(function() {
-                            _scrollTo(this, "a[name=worship-heading]", 0);
-                            $('.menu-close-action').click();
-                            return false;
-                        });
-                        $('.nav-mobile-location').click(function() {
-                            _scrollTo(this, "a[name=location-heading]", 0);
-                            $('.menu-close-action').click();
-                            return false;
-                        });
-                        $('.nav-mobile-contact').click(function() {
-                            _scrollTo(this, "a[name=contact-heading]", 0);
-                            $('.menu-close-action').click();
-                            return false;
-                        });
-                    });
-*/
-
-
             };
         };
     }

@@ -85,6 +85,10 @@
             z-index: 20;
         }
     }
+    .page-anchor {
+        position: absolute;
+        top: 0px;
+    }
     .page-section-header {
         min-height: 600px;
         position: relative;
@@ -93,38 +97,54 @@
         background-position: center bottom;
         color: white;
         overflow: hidden;
-        h1, h2 {
+        h1, h2, h3 {
             font-family: $font-sans;
             font-weight: $font-weight-light;
             text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             text-rendering: optimizeLegibility;
         }
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 0px;
             margin-top: 100px;
         }
         h2 {
-            font-size: 36px;
+            font-size: 46px;
             margin-top: 0px;
         }
+        h3 {
+            font-size: 16px;
+            margin-top: 10px;
+            br { display: none; }
+        }
         hr {
-            max-width: 520px;
+            max-width: 400px;
             border-color: $color-planet;
             border-style: solid;
-            @media (max-width: 640px) {
-                max-width: 315px;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 28px; }
+            h2 { font-size: 36px; }
+            h3 br { display: inline; }
+            hr { max-width: 315px; }
+        }
+        @include keyframes(rotate360) {
+            to {
+                @include transform(rotate(360deg));
             }
         }
         .star-field {
             position: fixed;
-            top: 0px;
+            top: -180px;
             left: 50%;
             height: 600px;
             width: 1600px;
             margin-left: -800px;
             background-image: url("../img/star_field.png");
             background-position: center;
+            @include animation(300s rotate360 infinite linear);
         }
         .mars {
             position: absolute;
@@ -135,6 +155,11 @@
             margin-left: -750px;
             @include retina-image("../img/blue_planet", 1500px 600px, "png");
             background-position: bottom;
+        }
+        .ship-support-leg {
+            position: absolute;
+            top: 57px;
+            left: 61px;
         }
         .ship {
             width: 144px;
@@ -153,7 +178,7 @@
             .thrust {
                 position: absolute;
                 top: 60px;
-                left: 48px;
+                left: 49px;
                 width: 46px;
                 height: 64px;
                 @include retina-image("../img/thrust", "cover", "png");
@@ -165,7 +190,7 @@
             #ladder {
                 position: absolute;
                 top: 33px;
-                left: 62px;
+                left: 63px;
                 width: 18px;
                 height: 51px;
                 background-image: url("../img/ladder.png");
@@ -231,25 +256,43 @@
         min-height: 200px;
         padding-top: 50px;
         padding-bottom: 30px;
-        h2 { margin: 0px 0 20px; color: $color-green-dark; }
+        h2 { margin: 0px 0 30px; }
         h3 { margin: 5px 0 15px; }
+        .infobox {
+            margin-top: 30px;
+        }
     }
     .page-section-projects {
         position: relative;
         z-index: 1;
-        background-color: $color-green-dark;
+        background-color: $color-blue-grey;
         min-height: 200px;
         padding-top: 40px;
-        color: lighten($color-green-light, 30%);
-        h2 { margin-top: 0px; color: white; }
+        h2 { margin-top: 0px; }
         h3 {
             font-size: 50px;
             text-align: center;
             margin-top: 40px;
             margin-bottom: 0px;
-            color: white;
+        }
+        .project-thumbnail {
+            min-height: 300px;
         }
         .col1 {
+            position: relative;
+            .mock-browser {
+                position: absolute;
+                left: 50%;
+                margin-left: -100px;
+                width: 200px;
+                background-color: lighten($color-blue-grey, 5%);
+                img {
+                    margin-top: 5px;
+                    width: 100%;
+                }
+            }
+        }
+        .col2 {
             .time-frame {
                 text-align: center;
                 font-size: 14px;
@@ -281,9 +324,6 @@
             .btn.btn-raised:not(.btn-link):hover.btn-primary {
                 background-color: lighten($color-green-light, 5%);
             }
-        }
-        .col2 {
-            background-color: $color-blue-grey-dark;
         }
     }
 }

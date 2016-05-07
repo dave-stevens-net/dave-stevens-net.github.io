@@ -24,6 +24,7 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator'],
                 $.Velocity.hook($('.ship'), "translateY", "0px");
                 $.Velocity.hook($('#ladder'), "translateY", "0px");
                 $('.thrust').hide();
+                _ship.stop();
                 _ship.reset();
             };
 
