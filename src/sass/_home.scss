@@ -137,14 +137,14 @@
         }
         .star-field {
             position: fixed;
-            top: -180px;
+            top: -670px;
             left: 50%;
-            height: 600px;
+            height: 1600px;
             width: 1600px;
             margin-left: -800px;
             background-image: url("../img/star_field.png");
             background-position: center;
-            @include animation(300s rotate360 infinite linear);
+            @include animation(150s rotate360 infinite linear);
         }
         .mars {
             position: absolute;
@@ -260,6 +260,21 @@
         h3 { margin: 5px 0 15px; }
         .infobox {
             margin-top: 30px;
+        }
+        .col1 {
+            min-height: 180px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            margin-left: -75px;
+            overflow: hidden;
+            img {
+                width: 150px;
+            }
         }
     }
     .page-section-projects {
