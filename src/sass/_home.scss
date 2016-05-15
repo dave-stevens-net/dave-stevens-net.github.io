@@ -295,13 +295,15 @@
             min-height: 300px;
         }
         .col1 {
-            position: relative;
+            perspective: 1000px;
+
             .mock-browser {
-                position: absolute;
-                left: 50%;
-                margin-left: -100px;
-                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 300px;
                 background-color: lighten($color-blue-grey, 5%);
+                box-shadow: 21px 15px 15px 0 rgba(0,0,0,.3);
+                transform: rotate3d(1, -1, 1, 80deg);
                 img {
                     margin-top: 5px;
                     width: 100%;
