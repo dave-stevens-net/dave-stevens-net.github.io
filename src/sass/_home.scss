@@ -150,10 +150,10 @@
             position: absolute;
             bottom: 0px;
             height: 260px;
-            width: 1500px;
+            width: 2000px;
             left: 50%;
-            margin-left: -750px;
-            @include retina-image("../img/blue_planet", 1500px 600px, "png");
+            margin-left: -1000px;
+            @include retina-image("../img/blue_planet", 2000px 600px, "png");
             background-position: bottom;
         }
         .ship-support-leg {
@@ -281,67 +281,56 @@
     .page-section-projects {
         position: relative;
         z-index: 1;
-        background-color: $color-blue-grey;
-        min-height: 200px;
+        background-color: #4687BE;
+        color: white;
+        min-height: 350px;
         padding-top: 40px;
         h2 { margin-top: 0px; }
-        h3 {
-            font-size: 50px;
+        .project-title {
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 0px;
+            text-transform: uppercase;
+            font-weight: $font-weight-normal;
+            letter-spacing: 3px;
         }
-        .project-thumbnail {
-            min-height: 300px;
+        .project-role {
+            text-align: center;
+            font-style: italic;
+            font-size: 13px;
         }
-        .col1 {
-            perspective: 1000px;
-
-            .mock-browser {
-                margin-left: auto;
-                margin-right: auto;
-                width: 300px;
-                background-color: lighten($color-blue-grey, 5%);
-                box-shadow: 21px 15px 15px 0 rgba(0,0,0,.3);
-                transform: rotate3d(1, -1, 1, 80deg);
-                img {
-                    margin-top: 5px;
-                    width: 100%;
+        .icon-container {
+            height: 142px;
+        }
+        %project {
+            text-align: center;
+            svg {
+                transition: all .2s ease-in-out;
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
                 }
             }
         }
-        .col2 {
-            .time-frame {
-                text-align: center;
-                font-size: 14px;
-                margin-bottom: 30px;
+        .project-tresta {
+            @extend %project;
+            svg {
+                margin-top: 40px;
+                width: 80px;
             }
-            .roles {
-                text-align: center;
-                margin: 20px 0 30px;
-                span {
-                    min-width: 100px;
-                    border-top: 1px solid $color-green-light;
-                    border-bottom: 1px solid $color-green-light;
-                    padding: 10px 0 10px;
-                    text-align: center;
-                }
+        }
+        .project-calvary {
+            @extend %project;
+            svg {
+                margin-top: 35px;
+                width: 70px;
             }
-            .devices-used {
-                .lrg { font-size: 30px; vertical-align: -3px; }
-                text-align: center;
-                margin-bottom: 10px;
+        }
+        .project-dave-stevens-net {
+            @extend %project;
+            svg {
+                margin-top: 40px;
+                width: 90px;
             }
-            .view-live {
-                text-align: center;
-                margin-bottom: 50px;
-            }
-            .btn.btn-raised.btn-primary {
-                background-color: $color-green-light;
-            }
-            .btn.btn-raised:not(.btn-link):hover.btn-primary {
-                background-color: lighten($color-green-light, 5%);
-            }
+            .project-role { margin-bottom: 50px; }
         }
     }
 }
