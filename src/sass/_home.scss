@@ -371,6 +371,43 @@
 
     .page-section-skills {
         position: relative;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: $color-blue-grey-light;
+        h2 { margin-bottom: 30px; }
+        h3 {
+            margin-top: 0px;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            td:first-child {
+                white-space: nowrap;
+                padding: 0px 20px 1px 0px;
+                width: 50%;
+                a {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 30px;
+                    text-align: center;
+                    img {
+                        height: 20px;
+                    }
+                }
+                span {
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-top: 2px;
+                }
+            }
+            td:last-child {
+                width: 50%;
+                .progress {
+                    margin-top: 3px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
     }
 
     .page-section-experience {
