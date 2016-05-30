@@ -303,6 +303,9 @@
         }
         %project {
             text-align: center;
+            a {
+                outline: none;
+            }
             svg {
                 transition: all .2s ease-in-out;
                 &:hover {
