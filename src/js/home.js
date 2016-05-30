@@ -15,15 +15,19 @@ define(['jquery', 'bootstrap', 'spaceshipSceneAnimator'],
                         $(".slider-menu").addClass("active");
                     }
                 });
-                var nav = function(scrollTo) {
+                var nav = function(scrollTo, duration) {
                     $('html, body').animate({
                         scrollTop: scrollTo
-                    }, 500);
+                    }, duration);
                     $(".menu-open-close").click();
                     return false;
                 };
                 $(".nav-top").click(function() { return nav(0); });
-                $(".nav-about-me").click(function() { return nav($("a[name=about-me-section]").offset().top); });
+                $(".nav-about-me").click(function() { return nav($("a[name=about-me-section]").offset().top, 500); });
+                $(".nav-projects").click(function() { return nav($("a[name=projects-section]").offset().top, 550); });
+                $(".nav-skills").click(function() { return nav($("a[name=skills-section]").offset().top, 600); });
+                $(".nav-experience").click(function() { return nav($("a[name=experience-section]").offset().top, 650); });
+                $(".nav-contact").click(function() { return nav($("a[name=contact-section]").offset().top, 700); });
             };
 
             var _morphToX = function() {

@@ -40,11 +40,11 @@
         height: 100%;
         width: 300px;
         background-color: $color-side-menu;
-        transition: left 0.5s ease-in-out;
+        transition: left 0.4s ease-in-out;
         padding-top: 60px;
         &.active {
             left: 0px;
-            transition: left 0.5s ease-in-out;
+            transition: left 0.4s ease-in-out;
         }
         .menu-nav:link, .menu-nav:visited {
             display: block;
@@ -365,4 +365,17 @@
             }
         }
     }
+
+    .page-section-skills {
+        position: relative;
+    }
+
+    .page-section-experience {
+        position: relative;
+    }
+
+    .page-section-contact {
+        position: relative;
+    }
+
 }
