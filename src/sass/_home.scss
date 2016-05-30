@@ -296,6 +296,7 @@
             text-align: center;
             font-style: italic;
             font-size: 13px;
+            color: lighten($color-green-light, 25%);
         }
         .icon-container {
             height: 142px;
@@ -331,6 +332,36 @@
                 width: 90px;
             }
             .project-role { margin-bottom: 50px; }
+        }
+    }
+
+    .project-modal {
+        .screen-shots {
+            text-align: center;
+            img {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+        .launch {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .technology-stack {
+            h5 {
+                font-size: 16px;
+            }
+            ul {
+                padding-left: 0px;
+                margin-bottom: 20px;
+                li {
+                    display: inline;
+                    padding-right: 5px;
+                    img {
+                        height: 30px;
+                    }
+                }
+            }
         }
     }
 }

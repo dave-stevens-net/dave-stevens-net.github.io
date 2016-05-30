@@ -6,4 +6,5 @@ body {
         font-weight: $font-weight-light;
         text-rendering: optimizeLegibility;
     }
+    padding-right: 0px !important; // fixes modal spacing bug
 }

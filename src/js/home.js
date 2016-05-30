@@ -1,5 +1,5 @@
-define(['jquery', 'spaceshipSceneAnimator'],
-    function($, SpaceshipSceneAnimator) {
+define(['jquery', 'bootstrap', 'spaceshipSceneAnimator'],
+    function($, bootstrap, SpaceshipSceneAnimator) {
         return function() {
             var self = this;
 
@@ -75,6 +75,7 @@ define(['jquery', 'spaceshipSceneAnimator'],
                 spaceshipSceneAnimator.init();
                 spaceshipSceneAnimator.playAnimation();
                 _setupSidebarNavigation();
+                $('[data-toggle="tooltip"]').tooltip();
             };
         };
     }

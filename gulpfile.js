@@ -15,7 +15,7 @@ gulp.task('clean', function(cb) {
         'build/**/*.js',
         'build/**/*.css',
         'build/fonts/*',
-        'build/img/*',
+        'build/img/**/*',
     ], cb);
 });
 
@@ -99,7 +99,7 @@ gulp.task('copy_css', compileComplete, function() {
 
 gulp.task('copy_img', compileComplete, function() {
     return gulp.src([
-            'src/img/*'
+            'src/img/**/*'
         ]).pipe(gulp.dest('./build/img'));
 });
 
