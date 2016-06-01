@@ -379,6 +379,21 @@
             margin-top: 0px;
             font-size: 18px;
         }
+        .col2 {
+            text-align: center;
+        }
+        .ship-animation {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            margin-bottom: 30px;
+            img {
+                width: 150px;
+            }
+        }
         table {
             width: 100%;
             td:first-child {
