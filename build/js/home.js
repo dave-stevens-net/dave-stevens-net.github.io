@@ -15,19 +15,26 @@ define(['jquery', 'bootstrap', 'spaceshipSceneAnimator'],
                         $(".slider-menu").addClass("active");
                     }
                 });
-                var nav = function(scrollTo, duration) {
+
+                var scrollTo = function(scrollTop, duration) {
                     $('html, body').animate({
-                        scrollTop: scrollTo
+                        scrollTop: scrollTop
                     }, duration);
+                    return false;
+                };
+
+                var nav = function(scrollTop, duration) {
+                    scrollTo(scrollTop, duration);
                     $(".menu-open-close").click();
                     return false;
                 };
-                $(".nav-top").click(function() { return nav(0); });
+                $(".nav-top").click(function() { return nav(0, 500); });
                 $(".nav-about-me").click(function() { return nav($("a[name=about-me-section]").offset().top, 500); });
                 $(".nav-projects").click(function() { return nav($("a[name=projects-section]").offset().top, 550); });
                 $(".nav-skills").click(function() { return nav($("a[name=skills-section]").offset().top, 600); });
                 $(".nav-experience").click(function() { return nav($("a[name=experience-section]").offset().top, 650); });
                 $(".nav-contact").click(function() { return nav($("a[name=contact-section]").offset().top, 700); });
+                $(".scroll-top").click(function() { return scrollTo(0, 500); });
             };
 
             var _morphToX = function() {
@@ -74,12 +81,23 @@ define(['jquery', 'bootstrap', 'spaceshipSceneAnimator'],
                 );
             };
 
+            var _formatEmail = function() {
+                var e = "mailto:";
+                e += "dstevensfamily";
+                e += "@";
+                e += "gmail";
+                e += ".";
+                e += "com";
+                $(".my-email").attr("href", e);
+            };
+
             self.init = function() {
                 var spaceshipSceneAnimator = new SpaceshipSceneAnimator();
                 spaceshipSceneAnimator.init();
                 spaceshipSceneAnimator.playAnimation();
                 _setupSidebarNavigation();
                 $('[data-toggle="tooltip"]').tooltip();
+                _formatEmail();
             };
         };
     }

@@ -281,7 +281,7 @@
     .page-section-projects {
         position: relative;
         z-index: 1;
-        background-color: #4687BE;
+        background-color: $color-blue;
         color: white;
         min-height: 350px;
         padding-top: 40px;
@@ -488,7 +488,59 @@
     }
 
     .page-section-contact {
+        background-color: $color-blue-grey-light;
         position: relative;
+        padding-top: 40px;
+        padding-bottom: 120px;
+        h2 {
+            margin-bottom: 30px;
+        }
+        .col-xs-12 {
+            text-align: center;
+            .btn {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+        img {
+            height: 30px;
+        }
+        .in-link {
+            vertical-align: -7px;
+            margin-left: -3px;
+        }
+        .ship-icon {
+            background-color: $color-blue-grey-light;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            margin-left: -50px;
+            padding-left: 19px;
+            padding-top: 24px;
+            svg {
+                fill: $color-blue;
+                height: 50px;
+            }
+        }
+    }
+
+    .page-section-footer {
+        background-color: $color-space;
+        position: relative;
+        height: 250px;
+        z-index: -1;
+        color: lighten($color-blue, 30%);
+        .cr {
+            display: inline-block;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 13px;
+        }
     }
 
 }
