@@ -93,8 +93,9 @@ define(['jquery', 'bootstrap', 'spaceshipSceneAnimator'],
 
             self.init = function() {
                 var spaceshipSceneAnimator = new SpaceshipSceneAnimator();
-                spaceshipSceneAnimator.init();
-                spaceshipSceneAnimator.playAnimation();
+                spaceshipSceneAnimator.init(function() {
+                    spaceshipSceneAnimator.playAnimation();
+                });
                 _setupSidebarNavigation();
                 $('[data-toggle="tooltip"]').tooltip();
                 _formatEmail();

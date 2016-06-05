@@ -157,25 +157,38 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator'],
                 );
             };
 
-            var _initArtifacts = function() {
+            var _initArtifacts = function(onComplete) {
+                var deferredRunning = $.Deferred();
+                var deferredStanding = $.Deferred();
+                var deferredClimbing = $.Deferred();
+                var deferredShip = $.Deferred();
                 _astronautRunning = $('#astronaut_running').spriteAnimator({
                     cols: 10,
                     rows: 3,
-                    cutOffFrames: 5
+                    cutOffFrames: 5,
+                    onLoaded: deferredRunning.resolve
                 });
                 _astronautStanding = $('#astronaut_standing').spriteAnimator({
                     cols: 10,
                     rows: 3,
-                    cutOffFrames: 5
+                    cutOffFrames: 5,
+                    onLoaded: deferredStanding.resolve
                 });
                 _astronautClimbing = $('#astronaut_climbing').spriteAnimator({
                     cols: 10,
                     rows: 3,
-                    cutOffFrames: 5
+                    cutOffFrames: 5,
+                    onLoaded: deferredClimbing.resolve
                 });
                 _ship = $('#ship_anim').spriteAnimator({
                     cols: 5,
-                    rows: 1
+                    rows: 1,
+                    onLoaded: deferredShip.resolve
+                });
+
+                $.when(deferredRunning, deferredStanding, deferredClimbing, deferredShip).done(function() {
+                    $(".ship-support-leg").show();
+                    onComplete();
                 });
             };
 
@@ -196,8 +209,8 @@ define(['jquery', 'velocity', 'velocityui', 'spriteanimator'],
                 });
             };
 
-            self.init = function() {
-                _initArtifacts();
+            self.init = function(onComplete) {
+                _initArtifacts(onComplete);
             };
 
             self.playAnimation = function() {
