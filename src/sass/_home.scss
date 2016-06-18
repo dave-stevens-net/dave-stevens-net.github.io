@@ -503,8 +503,33 @@
                 margin-bottom: 15px;
             }
         }
-        img {
-            height: 30px;
+        .portrait-container {
+            text-align: center;
+            .portrait {
+                display: inline-block;
+                border-radius: 50%;
+                width: 160px;
+                overflow: hidden;
+                img { width: 100%; }
+            }
+        }
+        .name {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        .location {
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .linked-in {
+            img {
+                height: 30px;
+            }
+        }
+        .resume {
+            margin-top: 15px;
         }
         .in-link {
             vertical-align: -7px;

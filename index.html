@@ -33,7 +33,7 @@
     <link href="build/css/dave-stevens.css" rel="stylesheet">
 </head>
 <body>
-    <div class="page-home">
+    <div class="page-home" itemscope itemtype ="http://schema.org/Person">
         <a class="menu-open-close">
             <span class="line1"></span>
             <span class="line2"></span>
@@ -53,9 +53,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1>Dave Stevens</h1>
+                        <h1 itemprop="name">Dave Stevens</h1>
                         <hr>
-                        <h2>Web Developer</h2>
+                        <h2 itemprog="jobTitle">Web Developer</h2>
                         <h3>Responsive Web Design <br/></span>&amp; Development</h3>
                     </div>
                 </div>
@@ -320,9 +320,9 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="timeline-year">2014</div>
-                            <div class="work-place">
-                                <h3><a href="https://tresta.com/">Tresta</a></h3>
-                                <div class="location">Tallahassee, Florida</div>
+                            <div class="work-place" itemprop="worksFor" itemtype ="http://schema.org/Organization">
+                                <h3><a href="https://tresta.com/" itemprop="name">Tresta</a></h3>
+                                <div class="location" itemprop="location">Tallahassee, Florida</div>
                                 <h4>Roles</h4>
                                 <ul>
                                     <li>Full stack developer</li>
@@ -339,11 +339,21 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
                         <h2>Contact Information</h2>
-                        <a href="tel:850-363-0607" class="btn btn-raised btn-primary"><i class="material-icons">phone</i> 850-363-0607</a>
+                        <div class="portrait-container">
+                            <div class="portrait">
+                                <img itemprop="image" src="/build/img/dave_stevens.jpg">
+                            </div>
+                        </div>
+                        <div class="name">Dave Stevens</div>
+                        <div class="location" itemprop="workLocation">Tallahasse, Florida</div>
+                        <a href="tel:850-363-0607" class="btn btn-raised btn-primary"><i class="material-icons">phone</i> <span itemprop="telephone">850-363-0607</span></a>
                         <a href="#" class="btn btn-raised btn-primary my-email"><i class="material-icons">email</i> Email Me</a>
-                        <div>
+                        <div class="linked-in">
                             <a href="http://www.linkedin.com/in/davestevensprofile"><img src="/build/img/in.png"></a>
                             <a href="http://www.linkedin.com/in/davestevensprofile" class="in-link">My LinkedIn Profile</a>
+                        </div>
+                        <div class="resume">
+                            <a href="/build/img/resume.pdf">Download Resume</a>
                         </div>
                     </div>
                 </div>
