@@ -320,7 +320,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="timeline-year">2014</div>
-                            <div class="work-place" itemprop="worksFor" itemtype ="http://schema.org/Organization">
+                            <div class="work-place" itemscope itemprop="worksFor" itemtype ="http://schema.org/Organization">
                                 <h3><a href="https://tresta.com/" itemprop="name">Tresta</a></h3>
                                 <div class="location" itemprop="location">Tallahassee, Florida</div>
                                 <h4>Roles</h4>
@@ -345,7 +345,9 @@
                             </div>
                         </div>
                         <div class="name">Dave Stevens</div>
-                        <div class="location" itemprop="workLocation">Tallahasse, Florida</div>
+                        <div class="location" itemscope itemprop="workLocation" itemtype ="http://schema.org/Place">
+                            <span itemprop="address">Tallahasse, Florida</span>
+                        </div>
                         <a href="tel:850-363-0607" class="btn btn-raised btn-primary"><i class="material-icons">phone</i> <span itemprop="telephone">850-363-0607</span></a>
                         <a href="#" class="btn btn-raised btn-primary my-email"><i class="material-icons">email</i> Email Me</a>
                         <div class="linked-in">
