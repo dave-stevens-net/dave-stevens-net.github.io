@@ -380,6 +380,30 @@
             margin-top: 0px;
             font-size: 18px;
         }
+        .intro {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        h4 {
+            a {
+                display: inline-block;
+                vertical-align: top;
+                width: 30px;
+                text-align: center;
+                img {
+                    height: 20px;
+                }
+            }
+            span {
+                display: inline-block;
+                vertical-align: top;
+                padding-top: 2px;
+            }
+        }
+        .solution {
+            padding-left: 20px;
+            font-size: 14px;
+        }
         .col2 {
             text-align: center;
         }
@@ -395,12 +419,18 @@
                 width: 150px;
             }
         }
+        .button-row {
+            text-align: center;
+        }
+    }
+
+    .skills-modal {
         table {
             width: 100%;
             td:first-child {
                 white-space: nowrap;
                 padding: 0px 20px 1px 0px;
-                width: 50%;
+                width: 40%;
                 a {
                     display: inline-block;
                     vertical-align: top;
@@ -417,10 +447,49 @@
                 }
             }
             td:last-child {
-                width: 50%;
+                width: 60%;
                 .progress {
                     margin-top: 3px;
                     margin-bottom: 0px;
+                }
+            }
+            .skill-level {
+                position: relative;
+                text-align: center;
+                z-index: 0;
+                @media (max-width: 640px) {
+                    font-size: 14px;
+                }
+                i {
+                    line-height: 1em;
+                    width: 18px;
+                    vertical-align: middle;
+                }
+                .left {
+                    float: left;
+                    background-color: #fff;
+                    padding-right: 3px;
+                }
+                .right {
+                    float: right;
+                    background-color: #fff;
+                    padding-left: 3px;
+                }
+                .skill-level-lbl {
+                    background-color: #fff;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    vertical-align: middle;
+                    @media (max-width: 490px) {
+                        display: none;
+                    }
+                }
+                .dashed-line {
+                    position: absolute;
+                    top: 11px;
+                    width: 100%;
+                    border-bottom: 1px dashed $default-font-color;
+                    z-index: -1;
                 }
             }
         }
