@@ -1,8 +1,9 @@
 {
     "name": "dave-stevens.net",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Dave Stevens Personal Web Site",
     "main": "index.html",
+    "engines" : { "node" : ">=7.4.0" },
     "dependencies": {
         "gulp": "3.9.0",
         "gulp-ejs": "1.2.2",
