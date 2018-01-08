@@ -130,11 +130,13 @@
             h3 br { display: inline; }
             hr { max-width: 315px; }
         }
+        /*
         @include keyframes(rotate360) {
             to {
                 @include transform(rotate(360deg));
             }
         }
+        */
         .star-field {
             position: fixed;
             top: -670px;
@@ -144,7 +146,7 @@
             margin-left: -800px;
             background-image: url("../img/star_field.png");
             background-position: center;
-            @include animation(150s rotate360 infinite linear);
+            //@include animation(150s rotate360 infinite linear);
         }
         .mars {
             position: absolute;
