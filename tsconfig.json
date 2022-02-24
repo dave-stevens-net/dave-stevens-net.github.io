@@ -1,0 +1,10 @@
+{
+  "include": ["src/**/*", "types/*.d.ts"],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react"
+  },
+}
