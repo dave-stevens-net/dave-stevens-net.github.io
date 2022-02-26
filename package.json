@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node esbuild.mjs -D",
-    "build": "node esbuild.mjs",
+    "build": "node esbuild.mjs && rm -rf build && cp -r dist build",
     "check": "tsc --noEmit",
     "serve": "esbuild --servedir=dist",
     "eslint": "eslint --ext .tsx,.ts src/",
