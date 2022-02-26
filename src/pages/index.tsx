@@ -64,8 +64,8 @@ const HomePage: React.FC<{ assetsRoot: string }> = ({
                 <h3>Graphic Design</h3>
                 <p>
                   I'm one of those rare left (analytical) and right (creative)
-                  So, I really enjoy graphic design as well. Check out my work
-                  in the project section.
+                  brained people. So, I really enjoy graphic design as well.
+                  Check out my work in the project section.
                 </p>
               </div>
               <div className={styles.card}>

@@ -86,6 +86,7 @@ export const styles = {
   `,
   cardRow: css`
     display: flex;
+    align-items: center;
     width: 100%;
     justify-content: center;
     @media (max-width: ${globalConstants.bp.phoneMax}) {
@@ -99,7 +100,7 @@ export const styles = {
     background-color: ${Colors.GREEN5};
     color: ${Colors.BLACK};
     border-radius: 4px;
-    min-height: 300px;
+    min-height: 350px;
     max-width: 200px;
     padding: 40px 16px 16px;
     width: 100%;
