@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import LayoutProps from '../layouts/layout-props'
+import { PageProps } from '../common/page-props'
 
 export function init(
-  Page: React.FC<LayoutProps>,
+  Page: React.FC<PageProps>,
   target: string,
   assetsRoot: string
 ): void {

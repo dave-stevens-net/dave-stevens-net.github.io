@@ -6,51 +6,69 @@ export const styles = {
   footer: css`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     margin-top: auto;
-    min-height: 300px;
+    padding-bottom: 60px;
     background-color: ${Colors.BLACK};
     color: ${Colors.LIGHT_GRAY5};
-  `,
-  address: css`
-    font-size: 14px;
-    margin-bottom: 8px;
-    text-align: center;
-    @media (max-width: ${globalConstants.bp.phoneMax}) {
-      font-size: 16px;
+    hr {
+      margin: 0 16px 60px;
+      border: none;
+      border-bottom: 1px solid ${Colors.DARK_GRAY1};
     }
   `,
-  addressPart: css`
-    display: inline-block;
+  row: css`
+    display: flex;
+    justify-content: center;
+    width: 100%;
     @media (max-width: ${globalConstants.bp.phoneMax}) {
-      display: block;
+      flex-direction: column;
     }
   `,
-  spacer: css`
-    margin: 0 15px;
-    display: inline-block;
-    @media (max-width: ${globalConstants.bp.phoneMax}) {
-      display: none;
+  col: css`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 20px;
+    h4 {
+      margin: 4px 0;
     }
+  `,
+  name: css`
+    display: flex;
+    color: ${Colors.GREEN5};
+    font-size: 27px;
+    font-family: ${globalConstants.titleFontFamily};
+    font-weight: ${globalConstants.titleFontWeight};
+  `,
+  title: css`
+    display: flex;
+    font-family: ${globalConstants.titleFontFamily};
+    font-weight: ${globalConstants.subTitleFontWeight};
+    margin-bottom: 20px;
   `,
   contactLink: css`
     display: inline;
-    a {
-      color: ${Colors.GREEN4};
-      text-decoration: none;
-      &:hover {
-        color: ${Colors.GREEN5};
+    margin: 4px 0;
+  `,
+  profileLink: css`
+    color: ${globalConstants.colorLinks};
+    margin: 4px 0;
+    svg {
+      height: 32px;
+      path {
+        fill: ${globalConstants.colorLinks};
       }
     }
-  `,
-  footerText: css`
-    font-size: 12px;
-    text-align: center;
+    svg:hover {
+      path {
+        fill: ${globalConstants.colorLinksHover};
+      }
+    }
     @media (max-width: ${globalConstants.bp.phoneMax}) {
-      font-size: 14px;
-      padding: 0 16px;
+      position: absolute;
+      top: -38px;
+      right: 0;
     }
   `,
 }

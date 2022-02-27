@@ -3,11 +3,9 @@ import { styles } from './index.styles'
 import Footer from '../components/footer'
 import { Helmet } from 'react-helmet'
 import { Icon } from '@blueprintjs/core'
+import { PageProps } from '../common/page-props'
 
-const HomePage: React.FC<{ assetsRoot: string }> = ({
-  assetsRoot,
-  children,
-}) => {
+const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
   return (
     <>
       <Helmet>
@@ -80,7 +78,13 @@ const HomePage: React.FC<{ assetsRoot: string }> = ({
             </div>
           </section>
           <section className={styles.sectionDark}>
+            <h2>Skills</h2>
+          </section>
+          <section className={styles.sectionLight}>
             <h2>Projects</h2>
+          </section>
+          <section className={styles.sectionDark}>
+            <h2>About Me</h2>
           </section>
         </div>
         <Footer />

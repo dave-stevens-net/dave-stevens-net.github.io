@@ -10,13 +10,21 @@ export const globals = css`
       display: flex;
       flex-direction: column;
       margin: 0;
-      font-family: 'Ubuntu', 'Helvetica', sans-serif;
+      font-family: ${globalConstants.defaultFontFamily};
       font-size: 16px;
       min-height: 100vh;
       background-color: ${Colors.DARK_GRAY1};
       color: ${Colors.LIGHT_GRAY5};
       @media (max-width: ${globalConstants.bp.phoneMax}) {
         font-size: calc(18px);
+      }
+      a {
+        color: ${globalConstants.colorLinks};
+        text-decoration: none;
+        &:hover {
+          color: ${globalConstants.colorLinksHover};
+          text-decoration: none;
+        }
       }
     }
   }
@@ -43,12 +51,12 @@ export const styles = {
     width: 100%;
     min-height: 500px;
     background-color: ${Colors.BLACK};
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
+    font-family: ${globalConstants.titleFontFamily}
+    font-weight: ${globalConstants.subTitleFontWeight};
     padding: 0 16px;
     h1 {
-      font-weight: 600;
-      color: ${Colors.GREEN5};
+      font-weight: ${globalConstants.titleFontWeight};
+      color: ${globalConstants.colorPrimary};
       font-size: 49px;
       margin: 0;
       @media (max-width: ${globalConstants.bp.phoneMax}) {
@@ -56,7 +64,7 @@ export const styles = {
       }
     }
     h2 {
-      font-weight: 200;
+      font-weight: ${globalConstants.subTitleFontWeight};
       text-transform: uppercase;
       margin: 0 0 16px;
       @media (max-width: ${globalConstants.bp.phoneMax}) {
@@ -97,7 +105,7 @@ export const styles = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${Colors.GREEN5};
+    background-color: ${globalConstants.colorPrimary};
     color: ${Colors.BLACK};
     border-radius: 4px;
     min-height: 350px;

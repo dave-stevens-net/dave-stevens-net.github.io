@@ -1,3 +1,5 @@
+import { Colors } from '@blueprintjs/core'
+
 export const globalConstants = {
   textMaxWidth: '680px',
   formMaxWidth: '400px',
@@ -15,4 +17,10 @@ export const globalConstants = {
   },
   defaultFontFamily: "'Ubuntu', 'Helvetica', sans-serif",
   defaultFontWeight: '16px',
+  titleFontFamily: "'Montserrat', sans-serif;",
+  titleFontWeight: 600,
+  subTitleFontWeight: 200,
+  colorPrimary: Colors.GREEN5,
+  colorLinks: Colors.GREEN5,
+  colorLinksHover: Colors.GREEN4,
 }
