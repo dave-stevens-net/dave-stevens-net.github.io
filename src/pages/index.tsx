@@ -111,6 +111,18 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
                 <a href="https://blueprintjs.com/">Blueprint</a>
                 <SkillLevel level={4} />
               </div>
+              <div className={styles.skill}>
+                <a href="https://linaria.dev/">Linaria</a>
+                <SkillLevel level={4} />
+              </div>
+              <div className={styles.skill}>
+                <a href="https://cssinjs.org/">JSS</a>
+                <SkillLevel level={4} />
+              </div>
+              <div className={styles.skill}>
+                <a href="https://styled-components.com/">Styled Components</a>
+                <SkillLevel level={3} />
+              </div>
             </div>
             <div className={styles.skillCategory}>
               <div className={styles.skillCategoryLabel}>
