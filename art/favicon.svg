@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="favicon.svg"
+   inkscape:export-filename="/home/davestevens/repos/dave-stevens-net/art/favicon.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +66,7 @@
      inkscape:label="Layer 2"
      style="opacity:1">
     <rect
-       style="fill:#32a467;fill-opacity:1;stroke:#ffffff;stroke-width:0.762;stroke-opacity:0.650893;paint-order:stroke markers fill"
+       style="fill:#32a467;fill-opacity:1;stroke:none;stroke-width:0.762;stroke-opacity:0.650893;paint-order:stroke markers fill"
        id="rect30892"
        width="135.46666"
        height="135.46666"
@@ -77,8 +80,8 @@
        style="font-size:293.333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4211);fill:#ffffff;fill-opacity:1"><tspan
          x="75.445312"
          y="495.4364"
-         id="tspan52131"><tspan
+         id="tspan52163"><tspan
            style="font-weight:bold;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold'"
-           id="tspan52129">DS</tspan></tspan></text>
+           id="tspan52161">DS</tspan></tspan></text>
   </g>
 </svg>
