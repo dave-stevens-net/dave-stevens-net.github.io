@@ -76,6 +76,7 @@ function copyAssets() {
   })
   fs.mkdirSync('dist/assets/favicons', {recursive: true})
   copyFilesToAssets('src/assets/favicons/*', 'dist/assets/favicons/').then()
+  copyFilesToAssets('src/assets/*.webmanifest', 'dist/').then()
 }
 
 function copyFilesToAssets(pattern, destDir) {
@@ -149,6 +150,10 @@ function writeHtmlFile(metafile) {
         <link href="${bpCssImport}" rel="stylesheet" />
         <link href="${bpIconsCssImport}" rel="stylesheet" />
         <link href="${bpPopoverCssImport}" rel="stylesheet" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
         ${pageCssHtml}
       </head><body>
       <div id="app"></div>

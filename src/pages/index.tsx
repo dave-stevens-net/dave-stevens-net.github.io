@@ -198,7 +198,15 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
             </div>
             <div className={styles.skillCategory}>
               <div className={styles.skillCategoryLabel}>
-                Testing Frameworks
+                Build / Testing Frameworks
+              </div>
+              <div className={styles.skill}>
+                <a href="https://webpack.js.org/">Webpack</a>
+                <SkillLevel level={4} />
+              </div>
+              <div className={styles.skill}>
+                <a href="https://esbuild.github.io/">esbuild</a>
+                <SkillLevel level={4} />
               </div>
               <div className={styles.skill}>
                 <a href="https://jestjs.io/">Jest</a>
