@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node esbuild.mjs -D",
-    "build": "node esbuild.mjs && rm -rf docs && cp -r dist docs",
+    "build": "node esbuild.mjs && rm -rf docs && cp -r dist docs && cp CNAME docs/",
     "check": "tsc --noEmit",
     "serve": "esbuild --servedir=dist",
     "eslint": "eslint --ext .tsx,.ts src/",

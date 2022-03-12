@@ -23,4 +23,5 @@ export const globalConstants = {
   colorPrimary: Colors.GREEN5,
   colorLinks: Colors.GREEN5,
   colorLinksHover: Colors.GREEN4,
+  colorSubtext: Colors.GRAY4,
 }
