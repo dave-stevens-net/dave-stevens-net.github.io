@@ -71,8 +71,8 @@ function copyAssets() {
   copyFilesToAssets('node_modules/@blueprintjs/icons/lib/css/*', 'dist/assets/css/').then()
   copyFilesToAssets('node_modules/@blueprintjs/popover2/lib/css/*', 'dist/assets/css/').then()
   fs.mkdirSync('dist/assets/img', {recursive: true})
-  copyFilesToAssets('src/assets/img/*', 'dist/assets/img/').then(() => {
-    genPlaceholderImages('dist/assets/img/*+(.jpg|.jpeg)')
+  copyFilesToAssets('src/assets/img/*+(.jpg|.jpeg|.png)', 'dist/assets/img/').then(() => {
+    genPlaceholderImages('dist/assets/img/*+(.jpg|.jpeg|.png)')
   })
   fs.mkdirSync('dist/assets/favicons', {recursive: true})
   copyFilesToAssets('src/assets/favicons/*', 'dist/assets/favicons/').then()

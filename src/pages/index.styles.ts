@@ -2,8 +2,6 @@ import { css } from '@linaria/core'
 import { globalConstants } from '../common/global-constants'
 import { Colors } from '@blueprintjs/core'
 
-const maxWidth = 600
-
 export const globals = css`
   :global() {
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;600&display=swap}');
@@ -123,96 +121,6 @@ export const styles = {
     }
     p {
       font-size: 14px;
-    }
-  `,
-  skillCategory: css`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: ${maxWidth}px;
-    background-color: ${Colors.DARK_GRAY1};
-    border-radius: 4px;
-    margin-bottom: 16px;
-  `,
-  skillCategoryLabel: css`
-    display: flex;
-    color: ${Colors.GRAY1};
-    border-bottom: 1px solid ${Colors.BLACK};
-    font-size: 11px;
-    padding: 4px 16px;
-    text-transform: uppercase;
-  `,
-  skill: css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 16px;
-    border-bottom: 1px solid ${Colors.BLACK};
-    &:last-child {
-      border-bottom: none;
-    }
-  `,
-  subText: css`
-    font-size: 12px;
-    color: ${Colors.GRAY1};
-  `,
-  projectCard: css`
-    display: flex;
-    flex-direction: row;
-    background-color: ${Colors.DARK_GRAY2};
-    margin-bottom: 16px;
-    max-width: ${maxWidth}px;
-    width: 100%;
-    h5 {
-      margin: 0 0 16px;
-      color: ${globalConstants.colorLinks};
-      font-weight: normal;
-      font-size: 18px;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-    &:hover {
-      h5 {
-        color: ${globalConstants.colorLinksHover};
-      }
-    }
-  `,
-  projectIcon: css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 32px;
-    width: 32px;
-    background-color: ${Colors.DARK_GRAY1};
-    border-radius: 4px;
-    margin-right: 16px;
-    path {
-      fill: ${Colors.GRAY2};
-    }
-  `,
-  projectDatum: css`
-    color: ${globalConstants.colorSubtext};
-    font-size: 14px;
-    margin-bottom: 8px;
-    label {
-      color: ${Colors.LIGHT_GRAY2};
-    }
-  `,
-  activities: css`
-    color: ${globalConstants.colorSubtext}
-    font-size: 14px;
-    line-height: 1.5;
-    padding-left: 14px;
-    margin: 0;
-  `,
-  tagList: css`
-    display: flex;
-    margin-top: 8px;
-    flex-flow: wrap;
-    .bp4-tag.bp4-round {
-      background-color: ${Colors.GRAY2};
-      margin: 4px;
     }
   `,
 }

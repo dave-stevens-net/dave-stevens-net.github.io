@@ -16,6 +16,7 @@ const LazyImage: React.FC<{
   const placeholder = src
     .replace('.jpg', '-placeholder.jpg')
     .replace('.jpeg', '-placeholder.jpeg')
+    .replace('.png', '-placeholder.png')
   const image = (
     <LazyLoadImage
       src={src}
