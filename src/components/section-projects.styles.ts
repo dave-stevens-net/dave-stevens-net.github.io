@@ -71,6 +71,13 @@ export const styles = {
     display: flex;
     width: 100%;
     max-width: 50vw;
+    @media (max-width: ${globalConstants.bp
+        .mdMax}) and (min-width: ${globalConstants.bp.tabletMin}) {
+      max-width: 75vw;
+    }
+    @media (max-width: ${globalConstants.bp.phoneMax}) {
+      max-width: none;
+    }
   `,
   dialogBody: css`
     display: flex;
