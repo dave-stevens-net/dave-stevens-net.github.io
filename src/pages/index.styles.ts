@@ -84,14 +84,6 @@ export const styles = {
     padding: 16px 16px 36px;
     width: 100%;
   `,
-  sectionDark: css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px 16px 36px;
-    width: 100%;
-    background-color: ${Colors.BLACK};
-  `,
   cardRow: css`
     display: flex;
     align-items: center;

@@ -6,6 +6,7 @@ import { Icon } from '@blueprintjs/core'
 import { PageProps } from '../common/page-props'
 import SectionSkills from '../components/section-skills'
 import SectionProjects from '../components/section-projects'
+import SectionAboutMe from '../components/section-about-me'
 
 const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
   return (
@@ -81,9 +82,7 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
           </section>
           <SectionSkills />
           <SectionProjects />
-          <section className={styles.sectionDark}>
-            <h2>About Me</h2>
-          </section>
+          <SectionAboutMe />
         </div>
         <Footer />
       </div>
