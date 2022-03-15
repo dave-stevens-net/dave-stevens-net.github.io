@@ -18,7 +18,7 @@ export const globals = css`
       @media (max-width: ${globalConstants.bp.phoneMax}) {
         font-size: calc(18px);
       }
-      a {
+      .bp4-dark a {
         color: ${globalConstants.colorLinks};
         text-decoration: none;
         &:hover {
