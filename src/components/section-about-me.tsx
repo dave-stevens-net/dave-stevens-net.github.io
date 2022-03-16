@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { styles } from './section-about-me.styles'
+import { Icon } from '@blueprintjs/core'
 
 const SectionAboutMe: React.FC = () => {
   return (
@@ -32,6 +33,79 @@ const SectionAboutMe: React.FC = () => {
             </a>
             .
           </p>
+          <h3>Work Experience</h3>
+          <div className={styles.workExperience}>
+            <div className={styles.employer}>
+              <div className={styles.empCol1}>
+                <Icon icon="office" />
+              </div>
+              <div className={styles.empCol2}>
+                <a
+                  href="https://www.principal.com"
+                  className={styles.employerName}
+                >
+                  Principal
+                </a>
+                <div>
+                  <label>Location:</label> Des Moines, Iowa
+                </div>
+                <div>
+                  <label>Duration:</label> (1991-2012)
+                </div>
+              </div>
+            </div>
+            <div className={styles.employer}>
+              <div className={styles.empCol1}>
+                <Icon icon="office" />
+              </div>
+              <div className={styles.empCol2}>
+                <a href="https://shiftdsm.com/" className={styles.employerName}>
+                  Slash Web Studios
+                </a>
+                <div>
+                  <label>Location:</label> Des Moines, Iowa
+                </div>
+                <div>
+                  <label>Duration:</label> (2012-2014)
+                </div>
+              </div>
+            </div>
+            <div className={styles.employer}>
+              <div className={styles.empCol1}>
+                <Icon icon="office" />
+              </div>
+              <div className={styles.empCol2}>
+                <a href="https://tresta.com/" className={styles.employerName}>
+                  Tresta
+                </a>
+                <div>
+                  <label>Location:</label> Tallahassee, FL
+                </div>
+                <div>
+                  <label>Duration:</label> (2014-2017)
+                </div>
+              </div>
+            </div>
+            <div className={styles.employer}>
+              <div className={styles.empCol1}>
+                <Icon icon="office" />
+              </div>
+              <div className={styles.empCol2}>
+                <a
+                  href="https://www.infinity-software.com/"
+                  className={styles.employerName}
+                >
+                  Infinity Software Development
+                </a>
+                <div>
+                  <label>Location:</label> Remote (Tallahassee, FL)
+                </div>
+                <div>
+                  <label>Duration:</label> (2017-present)
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

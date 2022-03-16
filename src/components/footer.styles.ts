@@ -14,7 +14,7 @@ export const styles = {
     hr {
       margin: 0 16px 60px;
       border: none;
-      border-bottom: 1px solid ${Colors.DARK_GRAY1};
+      border-bottom: 1px solid ${globalConstants.colorBorder};
     }
   `,
   row: css`
