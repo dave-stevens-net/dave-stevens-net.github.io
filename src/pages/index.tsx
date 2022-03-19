@@ -45,7 +45,11 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
         />
         <link rel="manifest" href={`${assetsRoot}favicons/site.webmanifest`} />
       </Helmet>
-      <div className={`${styles.container} bp4-dark`}>
+      <div
+        className={`${styles.container} bp4-dark`}
+        itemScope={true}
+        itemType="https://schema.org/Person"
+      >
         <NavBar
           sections={{
             top: sectionTop,

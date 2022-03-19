@@ -9,7 +9,10 @@ const SectionAboutMe: React.FC = () => {
       <div className={styles.row}>
         <div className={styles.colAvatar}>
           <img className={styles.avatar} src="assets/img/dave_stevens.jpg" />
-          <h3>Dave Stevens</h3>
+          <h3>
+            <span itemProp="givenName">Dave</span>{' '}
+            <span itemProp="familyName">Stevens</span>
+          </h3>
         </div>
         <div className={styles.colHistory}>
           <p>

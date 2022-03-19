@@ -12,7 +12,9 @@ const Footer: React.FC = () => {
       <div className={styles.row}>
         <div className={styles.col}>
           <div className={styles.name}>Dave Stevens</div>
-          <div className={styles.title}>UI Developer / Designer</div>
+          <div className={styles.title} itemProp="jobTitle">
+            UI Developer / Designer
+          </div>
         </div>
         <div className={styles.col}>
           <h4>Contact</h4>
@@ -25,6 +27,9 @@ const Footer: React.FC = () => {
             <Obfuscate href={phoneNumber.getURI()}>
               {phoneNumber.formatNational()}
             </Obfuscate>
+          </div>
+          <div className={styles.contactLink} itemProp="workLocation">
+            Tallahassee, Florida USA
           </div>
         </div>
         <div className={styles.col}>
