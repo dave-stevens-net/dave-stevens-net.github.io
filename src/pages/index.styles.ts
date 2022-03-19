@@ -77,11 +77,15 @@ export const styles = {
       font-size: 15px;
     }
   `,
+  section: css`
+    display: flex;
+    width: 100%;
+  `,
   sectionLight: css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px 16px 36px;
+    padding: 36px 16px 42px;
     width: 100%;
   `,
   cardRow: css`

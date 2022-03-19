@@ -7,7 +7,7 @@ export const styles = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px 16px 36px;
+    padding: 36px 16px 42px;
     width: 100%;
     background-color: ${Colors.BLACK};
     h2 {

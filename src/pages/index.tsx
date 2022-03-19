@@ -7,13 +7,21 @@ import { PageProps } from '../common/page-props'
 import SectionSkills from '../components/section-skills'
 import SectionProjects from '../components/section-projects'
 import SectionAboutMe from '../components/section-about-me'
+import NavBar from '../components/nav-bar'
+import { useRef } from 'react'
 
 const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
+  const sectionTop = useRef<HTMLDivElement>(null)
+  const sectionWhatIDoRef = useRef<HTMLDivElement>(null)
+  const sectionSkillsRef = useRef<HTMLDivElement>(null)
+  const sectionProjectsRef = useRef<HTMLDivElement>(null)
+  const sectionAboutMeRef = useRef<HTMLDivElement>(null)
+
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Dave Stevens - Home Page</title>
+        <title>Dave Stevens - Developer Portfolio</title>
         <meta
           name="description"
           content="The portfolio site for Dave Stevens, a UI developer and designer."
@@ -38,7 +46,16 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
         <link rel="manifest" href={`${assetsRoot}favicons/site.webmanifest`} />
       </Helmet>
       <div className={`${styles.container} bp4-dark`}>
-        <div className={styles.topSection}>
+        <NavBar
+          sections={{
+            top: sectionTop,
+            whatIDo: sectionWhatIDoRef,
+            skills: sectionSkillsRef,
+            projects: sectionProjectsRef,
+            aboutMe: sectionAboutMeRef,
+          }}
+        />
+        <div className={styles.topSection} ref={sectionTop}>
           <h1>Dave Stevens</h1>
           <h2>UI Developer / Designer</h2>
           <p>
@@ -48,7 +65,7 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
           </p>
         </div>
         <div className={styles.contentBody}>
-          <section className={styles.sectionLight}>
+          <section className={styles.sectionLight} ref={sectionWhatIDoRef}>
             <h2>What I Do</h2>
             <div className={styles.cardRow}>
               <div className={styles.card}>
@@ -80,9 +97,15 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
               </div>
             </div>
           </section>
-          <SectionSkills />
-          <SectionProjects />
-          <SectionAboutMe />
+          <div ref={sectionSkillsRef} className={styles.section}>
+            <SectionSkills />
+          </div>
+          <div ref={sectionProjectsRef} className={styles.section}>
+            <SectionProjects />
+          </div>
+          <div ref={sectionAboutMeRef} className={styles.section}>
+            <SectionAboutMe />
+          </div>
         </div>
         <Footer />
       </div>
