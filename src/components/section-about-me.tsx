@@ -8,11 +8,12 @@ const SectionAboutMe: React.FC = () => {
       <h2>About Me</h2>
       <div className={styles.row}>
         <div className={styles.colAvatar}>
-          <img className={styles.avatar} src="assets/img/dave_stevens.jpg" />
-          <h3>
-            <span itemProp="givenName">Dave</span>{' '}
-            <span itemProp="familyName">Stevens</span>
-          </h3>
+          <img
+            className={styles.avatar}
+            src="assets/img/dave_stevens.jpg"
+            alt="Dave Stevens"
+          />
+          <h3>Dave Stevens</h3>
         </div>
         <div className={styles.colHistory}>
           <p>
@@ -26,12 +27,7 @@ const SectionAboutMe: React.FC = () => {
           <h3>Educational Background</h3>
           <p>
             I have a Bachelor of Science degree in Computer Science from{' '}
-            <a
-              href="http://www.iastate.edu/"
-              itemScope={true}
-              itemProp="alumniOf"
-              itemType="http://schema.org/Organization"
-            >
+            <a href="http://www.iastate.edu/">
               <span itemProp="name">Iowa State University</span>
             </a>
             .

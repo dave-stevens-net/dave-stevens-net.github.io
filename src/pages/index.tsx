@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { styles } from './index.styles'
 import Footer from '../components/footer'
-import { Helmet } from 'react-helmet'
 import { Icon } from '@blueprintjs/core'
 import { PageProps } from '../common/page-props'
 import SectionSkills from '../components/section-skills'
@@ -19,37 +18,7 @@ const HomePage: React.FC<PageProps> = ({ assetsRoot }) => {
 
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Dave Stevens - Developer Portfolio</title>
-        <meta
-          name="description"
-          content="The portfolio site for Dave Stevens, a UI developer and designer."
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${assetsRoot}favicons/apple-touch-icon.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href={`${assetsRoot}favicons/favicon-32x32.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href={`${assetsRoot}favicons/favicon-16x16.png`}
-        />
-        <link rel="manifest" href={`${assetsRoot}favicons/site.webmanifest`} />
-      </Helmet>
-      <div
-        className={`${styles.container} bp4-dark`}
-        itemScope={true}
-        itemType="https://schema.org/Person"
-      >
+      <div className={`${styles.container} bp4-dark`}>
         <NavBar
           sections={{
             top: sectionTop,

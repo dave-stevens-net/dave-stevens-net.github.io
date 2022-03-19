@@ -146,7 +146,12 @@ function writeHtmlFile(metafile) {
     }
     // <link href="${appCssImport}" rel="stylesheet" />
     const html = `<!DOCTYPE html><html lang="en"><head>
+        <title>Dave Stevens - Developer Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta
+          name="description"
+          content="The portfolio site for Dave Stevens, a UI developer and designer."
+        />
         <link href="${bpCssImport}" rel="stylesheet" />
         <link href="${bpIconsCssImport}" rel="stylesheet" />
         <link href="${bpPopoverCssImport}" rel="stylesheet" />
@@ -154,6 +159,21 @@ function writeHtmlFile(metafile) {
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Person",
+          "name": "Dave Stevens",
+          "url": "https://dave-stevens.net",
+          "image": "https://www.dave-stevens.net/assets/img/dave_stevens.jpg",
+          "sameAs": "https://www.linkedin.com/in/davestevensprofile",
+          "jobTitle": "UI Developer / Designer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Infinity Software Development"
+          }  
+        }
+        </script>
         ${pageCssHtml}
       </head><body>
       <div id="app"></div>
